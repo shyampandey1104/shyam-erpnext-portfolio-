@@ -1,6 +1,0 @@
-#!/usr/bin/expect -f
-set password "Frappe@Hrms!"
-spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227 "cd /home/frappe/frappe-bench && echo \"print(frappe.get_meta('Batches').table_name)\" | bench --site aas.com console"
-expect "password:"
-send "$password\r"
-expect eof

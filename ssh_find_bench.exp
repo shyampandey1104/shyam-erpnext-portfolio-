@@ -1,6 +1,0 @@
-#!/usr/bin/expect -f
-set password "Frappe@Hrms!"
-spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227 "find / -name frappe-bench -type d -maxdepth 4 2>/dev/null"
-expect "password:"
-send "$password\r"
-expect eof

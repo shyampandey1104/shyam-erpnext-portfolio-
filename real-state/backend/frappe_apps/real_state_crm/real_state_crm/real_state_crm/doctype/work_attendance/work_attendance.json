@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "creation": "2026-09-04 10:55:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user_email",
+  "status",
+  "timestamp",
+  "column_break_1",
+  "latitude",
+  "longitude",
+  "address"
+ ],
+ "fields": [
+  { "fieldname": "user_email", "fieldtype": "Data", "in_list_view": 1, "label": "User Email", "reqd": 1 },
+  { "fieldname": "status", "fieldtype": "Data", "in_list_view": 1, "label": "Status" },
+  { "fieldname": "timestamp", "fieldtype": "Datetime", "in_list_view": 1, "label": "Timestamp" },
+  { "fieldname": "column_break_1", "fieldtype": "Column Break" },
+  { "fieldname": "latitude", "fieldtype": "Data", "label": "Latitude" },
+  { "fieldname": "longitude", "fieldtype": "Data", "label": "Longitude" },
+  { "fieldname": "address", "fieldtype": "Small Text", "label": "GPS Verified Address" }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 10:55:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Work Attendance",
+ "naming_rule": "Random",
+ "autoname": "hash",
+ "owner": "Administrator",
+ "permissions": [{ "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1 }, { "create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "All", "share": 1, "write": 1 }],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

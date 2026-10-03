@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "creation": "2026-09-03 15:35:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "client_name",
+  "client_phone",
+  "activity_type",
+  "column_break_1",
+  "status",
+  "location",
+  "schedule_time",
+  "notes"
+ ],
+ "fields": [
+  { "fieldname": "title", "fieldtype": "Data", "in_list_view": 1, "label": "Activity Title", "reqd": 1 },
+  { "fieldname": "client_name", "fieldtype": "Data", "in_list_view": 1, "label": "Client Name" },
+  { "fieldname": "client_phone", "fieldtype": "Data", "label": "Client Phone" },
+  { "fieldname": "activity_type", "fieldtype": "Select", "in_list_view": 1, "label": "Type", "options": "Site Visit\nMeeting\nVideo Call\nFollow-up" },
+  { "fieldname": "column_break_1", "fieldtype": "Column Break" },
+  { "fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "Confirmed\nScheduled\nPending\nCompleted\nCancelled" },
+  { "fieldname": "location", "fieldtype": "Data", "label": "Location / Venue" },
+  { "fieldname": "schedule_time", "fieldtype": "Data", "label": "Scheduled Time" },
+  { "fieldname": "notes", "fieldtype": "Small Text", "label": "Notes" }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-03 15:35:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Activity Schedule",
+ "naming_rule": "Random",
+ "autoname": "hash",
+ "owner": "Administrator",
+ "permissions": [{ "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1 }, { "create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "All", "share": 1, "write": 1 }],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

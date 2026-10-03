@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shyamkumar Bhupendra Pandey — Senior ERPNext Developer | Python & Integration Specialist</title>
+<meta name="description" content="Portfolio of Shyamkumar Bhupendra Pandey, Senior ERPNext Developer, Python & Integration Specialist and Team Lead in Mumbai. 15+ Custom ERP, Real Estate CRM, School ERP & Jewelry MS Projects."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://translate.google.com" crossorigin/>
+<link rel="preconnect" href="https://translate.googleapis.com" crossorigin/>
+<link rel="dns-prefetch" href="https://translate.google.com"/>
+<link rel="dns-prefetch" href="https://translate.googleapis.com"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sora: ['Sora','sans-serif'],
+        jakarta: ['Plus Jakarta Sans','sans-serif'],
+        mono: ['JetBrains Mono','monospace'],
+      },
+      colors: {
+        ink: '#0F0F1A',
+        cream: '#FFF8EC',
+        hotpink: '#FF2E93',
+        violet2: '#7C3AED',
+        orangy: '#FF6B00',
+        limey: '#A3E635',
+        cyany: '#06B6D4',
+        sunny: '#FFC700',
+      },
+      boxShadow: {
+        brutal: '7px 7px 0 #0F0F1A',
+        brutalSm: '4px 4px 0 #0F0F1A',
+        brutalLg: '10px 10px 0 #0F0F1A',
+        brutalWhite: '7px 7px 0 #ffffff',
+        glowPink: '0 0 40px rgba(255,46,147,.45)',
+      }
+    }
+  }
+}
+</script>
+<style>
+  *{ -webkit-tap-highlight-color: transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:'Plus Jakarta Sans',sans-serif; background:#FFF8EC; color:#0F0F1A; overflow-x:hidden; }
+  h1,h2,h3,.font-sora{ font-family:'Sora',sans-serif; }
+  ::selection{ background:#FF2E93; color:#fff; }
+  ::-webkit-scrollbar{ width:12px; }
+  ::-webkit-scrollbar-track{ background:#FFF8EC; }
+  ::-webkit-scrollbar-thumb{ background:linear-gradient(180deg,#FF2E93,#7C3AED,#06B6D4); border-radius:99px; border:3px solid #FFF8EC; }
+
+  .grad-text{ background:linear-gradient(92deg,#FF2E93 0%,#7C3AED 35%,#06B6D4 70%,#FF6B00 100%); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% auto; animation:gradShift 5s linear infinite; }
+  @keyframes gradShift{ to{ background-position:200% center; } }
+  .grad-bg{ background:linear-gradient(135deg,#FF2E93 0%,#7C3AED 45%,#06B6D4 100%); }
+  .grad-bg2{ background:linear-gradient(135deg,#FF6B00 0%,#FF2E93 55%,#7C3AED 100%); }
+  .grad-bg3{ background:linear-gradient(135deg,#A3E635 0%,#06B6D4 55%,#7C3AED 100%); }
+  .grad-bg4{ background:linear-gradient(135deg,#FFC700 0%,#FF6B00 50%,#FF2E93 100%); }
+
+  .dot-grid{ background-image:radial-gradient(#0F0F1A 1.4px, transparent 1.4px); background-size:22px 22px; }
+  .dot-grid-light{ background-image:radial-gradient(rgba(255,255,255,.22) 1.5px, transparent 1.5px); background-size:22px 22px; }
+  .grid-lines{ background-image:linear-gradient(rgba(15,15,26,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(15,15,26,.07) 1px, transparent 1px); background-size:44px 44px; }
+
+  .blob{ position:absolute; filter:blur(70px); opacity:.55; border-radius:9999px; animation:blobFloat 9s ease-in-out infinite; pointer-events:none; }
+  @keyframes blobFloat{ 0%,100%{ transform:translateY(0) scale(1) rotate(0deg);} 50%{ transform:translateY(-30px) scale(1.12) rotate(8deg);} }
+
+  .marquee-track{ display:flex; gap:0; width:max-content; animation:marquee 24s linear infinite; }
+  .marquee-track:hover{ animation-play-state:paused; }
+  @keyframes marquee{ to{ transform:translateX(-50%);} }
+
+  .sticker{ border:3px solid #0F0F1A; box-shadow:5px 5px 0 #0F0F1A; }
+  .card-brutal{ border:3px solid #0F0F1A; box-shadow:7px 7px 0 #0F0F1A; transition:transform .25s ease, box-shadow .25s ease; background:#fff; }
+  .card-brutal:hover{ transform:translate(-3px,-3px); box-shadow:10px 10px 0 #0F0F1A; }
+  .btn-brutal{ border:3px solid #0F0F1A; box-shadow:5px 5px 0 #0F0F1A; transition:all .2s ease; }
+  .btn-brutal:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 #0F0F1A; }
+  .btn-brutal:active{ transform:translate(3px,3px); box-shadow:0 0 0 #0F0F1A; }
+
+  .float-slow{ animation:floatY 5s ease-in-out infinite; }
+  .float-slower{ animation:floatY 7s ease-in-out infinite; }
+  @keyframes floatY{ 0%,100%{ transform:translateY(0) rotate(var(--r,0deg)); } 50%{ transform:translateY(-16px) rotate(var(--r,0deg)); } }
+  .spin-slow{ animation:spin 14s linear infinite; }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+  .wiggle:hover{ animation:wiggle .4s ease; }
+  @keyframes wiggle{ 0%,100%{transform:rotate(0)} 25%{transform:rotate(-3deg) scale(1.03)} 75%{transform:rotate(3deg) scale(1.03)} }
+
+  .type-caret::after{ content:'▋'; margin-left:4px; color:#FF2E93; animation:blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{opacity:0} }
+
+  .progress-fill{ width:0%; transition:width 1.4s cubic-bezier(.22,1,.36,1); }
+  .reveal{ opacity:0; transform:translateY(36px); }
+
+  .timeline-line{ position:absolute; left:23px; top:0; bottom:0; width:4px; background:linear-gradient(180deg,#FF2E93,#7C3AED,#06B6D4,#A3E635,#FF6B00); border-radius:99px; }
+  @media(min-width:768px){ .timeline-line{ left:50%; transform:translateX(-50%);} }
+
+  .exp-body{ max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.22,1,.36,1), opacity .4s; opacity:0; }
+  .exp-item.open .exp-body{ opacity:1; }
+  .exp-item.open .exp-arrow{ transform:rotate(180deg); }
+  .exp-arrow{ transition:transform .3s; }
+
+  .proj-card img{ transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .proj-card:hover img{ transform:scale(1.08) rotate(-1deg); }
+
+  input[type=range]{ -webkit-appearance:none; width:100%; height:12px; border-radius:99px; border:3px solid #0F0F1A; background:linear-gradient(90deg,#FF2E93,#7C3AED,#06B6D4); outline:none; }
+  input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:#FFC700; border:3px solid #0F0F1A; box-shadow:3px 3px 0 #0F0F1A; cursor:pointer; transition:transform .15s; }
+  input[type=range]::-webkit-slider-thumb:hover{ transform:scale(1.15) rotate(10deg); }
+  input[type=range]::-moz-range-thumb{ width:26px; height:26px; border-radius:50%; background:#FFC700; border:3px solid #0F0F1A; box-shadow:3px 3px 0 #0F0F1A; cursor:pointer; }
+
+  #preloader{ transition:opacity .6s ease, visibility .6s; }
+  #preloader.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+  .loader-bar{ animation:load 1.2s ease-in-out infinite; }
+  @keyframes load{ 0%{transform:translateX(-100%)} 100%{transform:translateX(250%)} }
+
+  .chat-msg-bot{ background:#fff; border:2.5px solid #0F0F1A; box-shadow:3px 3px 0 #0F0F1A; }
+  .chat-msg-user{ background:#0F0F1A; color:#fff; }
+  .typing-dot{ width:7px; height:7px; border-radius:99px; background:#7C3AED; animation:typing 1s infinite; display:inline-block; }
+  .typing-dot:nth-child(2){ animation-delay:.15s; background:#FF2E93;} .typing-dot:nth-child(3){ animation-delay:.3s; background:#06B6D4;}
+  @keyframes typing{ 0%,60%,100%{ transform:translateY(0); opacity:.6;} 30%{ transform:translateY(-6px); opacity:1;} }
+
+  .modal-bg{ background:rgba(15,15,26,.75); backdrop-filter:blur(8px); }
+  .toast-in{ animation:toastIn .4s cubic-bezier(.34,1.56,.64,1); }
+  @keyframes toastIn{ from{ transform:translateY(20px) scale(.9); opacity:0;} to{ transform:translateY(0) scale(1); opacity:1;} }
+
+  .code-window{ background:#0F0F1A; border:3px solid #0F0F1A; box-shadow:8px 8px 0 #FF2E93, 16px 16px 0 #7C3AED; }
+  .cursor-glow{ position:fixed; width:520px; height:520px; border-radius:50%; pointer-events:none; z-index:1; background:radial-gradient(circle, rgba(255,46,147,.14) 0%, rgba(124,58,237,.10) 35%, transparent 70%); transform:translate(-50%,-50%); transition:opacity .3s; }
+
+  #cursorDot{ position:fixed; width:14px; height:14px; background:#FF2E93; border:2.5px solid #0F0F1A; border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s, background .2s; }
+  #cursorRing{ position:fixed; width:38px; height:38px; border:2.5px solid #0F0F1A; background:rgba(255,199,0,.25); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .25s,height .25s; }
+  @media(pointer:coarse){ #cursorDot,#cursorRing,.cursor-glow{ display:none; } }
+
+  .tilt-card{ transform-style:preserve-3d; transition:transform .15s ease-out; will-change:transform; }
+  .pfilter-btn.active{ background:#0F0F1A !important; color:#fff !important; }
+
+  /* MULTILINGUAL TRANSLATE ENGINE CLEANUP */
+  .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, iframe.goog-te-banner-frame { display: none !important; }
+  body { top: 0px !important; }
+  #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+  .goog-text-highlight { background: none !important; box-shadow: none !important; }
+  .skiptranslate:not(.custom-lang-widget) { display: none !important; }
+  #google_translate_element { display: none !important; }
+  font { background: transparent !important; box-shadow: none !important; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- CURSOR -->
+<div class="cursor-glow" id="cursorGlow"></div>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+
+<!-- PRELOADER -->
+<div id="preloader" class="fixed inset-0 z-[10000] grad-bg flex flex-col items-center justify-center text-white px-6">
+  <div class="w-24 h-24 bg-white border-4 border-black rounded-3xl flex items-center justify-center shadow-[8px_8px_0_#0F0F1A] rotate-[-6deg] mb-6">
+    <span class="font-sora font-extrabold text-4xl grad-text">SP</span>
+  </div>
+  <h2 class="font-sora font-extrabold text-2xl md:text-3xl tracking-tight">SHYAMKUMAR PANDEY</h2>
+  <p class="font-mono text-sm mt-2 bg-black/30 px-4 py-1 rounded-full border border-white/30">Custom ERP • Frappe • IoT Integrations ⚡</p>
+  <div class="w-64 h-4 mt-6 bg-black/30 border-2 border-white rounded-full overflow-hidden">
+    <div class="h-full w-1/3 bg-[#FFC700] rounded-full loader-bar"></div>
+  </div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div class="fixed top-0 left-0 h-[6px] grad-bg z-[9990] w-0" id="scrollProgress"></div>
+
+<!-- NAV -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-[9000] transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 pt-4">
+    <nav class="bg-white/90 backdrop-blur-xl border-[3px] border-ink rounded-2xl shadow-brutal px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 grad-bg border-[3px] border-ink rounded-xl flex items-center justify-center font-sora font-extrabold text-white text-lg rotate-[-6deg] group-hover:rotate-[6deg] transition-transform shadow-brutalSm">SP</div>
+        <div class="leading-tight">
+          <div class="font-sora font-extrabold text-[15px] tracking-tight">SHYAMKUMAR PANDEY</div>
+          <div class="text-[11px] font-mono font-semibold text-white bg-ink px-2 py-[1px] rounded-full inline-block mt-[2px]">Senior ERPNext Developer • Team Lead</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-1 font-semibold text-[14.5px]">
+        <a href="#about" class="px-3 py-2 rounded-xl hover:bg-[#FFC700] hover:border-ink border-2 border-transparent transition">About</a>
+        <a href="#solutions" class="px-3 py-2 rounded-xl hover:bg-[#A3E635] hover:border-ink border-2 border-transparent transition">Solutions</a>
+        <a href="#projects" class="px-3 py-2 rounded-xl hover:bg-[#FF2E93]/20 hover:border-ink border-2 border-transparent transition">15+ Projects</a>
+        <a href="#skills" class="px-3 py-2 rounded-xl hover:bg-[#06B6D4]/30 hover:border-ink border-2 border-transparent transition">Skills</a>
+        <a href="#experience" class="px-3 py-2 rounded-xl hover:bg-violet-200 hover:border-ink border-2 border-transparent transition">Experience</a>
+        <a href="#contact" class="px-3 py-2 rounded-xl hover:bg-orange-200 hover:border-ink border-2 border-transparent transition">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <!-- LANGUAGE SELECTOR -->
+        <div class="relative" id="langDropdownContainer">
+          <button id="langToggleBtn" onclick="toggleLangDropdown()" class="btn-brutal bg-white hover:bg-[#FFC700] text-ink font-sora font-bold text-xs md:text-sm px-2.5 sm:px-3 py-2 rounded-xl flex items-center gap-1.5 transition" title="Change Language">
+            <span class="text-base" id="currentLangFlag">🌐</span>
+            <span class="hidden md:inline" id="currentLangLabel">English</span>
+            <i class="fa-solid fa-chevron-down text-[10px] ml-0.5"></i>
+          </button>
+          <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white border-[3px] border-ink rounded-2xl shadow-brutalLg p-2 z-[9999] max-h-72 overflow-y-auto space-y-1">
+            <button onclick="setLanguage('en','🇬🇧 English','🇬🇧')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇬🇧 English</span>
+            </button>
+            <button onclick="setLanguage('hi','🇮🇳 हिन्दी (Hindi)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 हिन्दी (Hindi)</span>
+            </button>
+            <button onclick="setLanguage('mr','🇮🇳 मराठी (Marathi)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 मराठी (Marathi)</span>
+            </button>
+            <button onclick="setLanguage('gu','🇮🇳 ગુજરાતી (Gujarati)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 ગુજરાતી (Gujarati)</span>
+            </button>
+            <button onclick="setLanguage('bn','🇮🇳 বাংলা (Bengali)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 বাংলা (Bengali)</span>
+            </button>
+            <button onclick="setLanguage('ta','🇮🇳 தமிழ் (Tamil)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 தமிழ் (Tamil)</span>
+            </button>
+            <button onclick="setLanguage('te','🇮🇳 తెలుగు (Telugu)','🇮🇳')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇮🇳 తెలుగు (Telugu)</span>
+            </button>
+            <button onclick="setLanguage('ar','🇸🇦 العربية (Arabic)','🇸🇦')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇸🇦 العربية (Arabic)</span>
+            </button>
+            <button onclick="setLanguage('de','🇩🇪 Deutsch','🇩🇪')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇩🇪 Deutsch</span>
+            </button>
+            <button onclick="setLanguage('es','🇪🇸 Español','🇪🇸')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇪🇸 Español</span>
+            </button>
+            <button onclick="setLanguage('fr','🇫🇷 Français','🇫🇷')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇫🇷 Français</span>
+            </button>
+            <button onclick="setLanguage('ru','🇷🇺 Русский','🇷🇺')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇷🇺 Русский</span>
+            </button>
+            <button onclick="setLanguage('ja','🇯🇵 日本語','🇯🇵')" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-[#FFC700] flex items-center justify-between transition">
+              <span>🇯🇵 日本語</span>
+            </button>
+          </div>
+        </div>
+        <button onclick="scrollToContactForm()" class="btn-brutal bg-[#25D366] text-white font-sora font-bold text-xs md:text-sm px-3.5 sm:px-4 py-2.5 rounded-xl items-center gap-2 inline-flex"><i class="fa-solid fa-calendar-check text-lg"></i> <span class="hidden sm:inline">Book Live Demo</span><span class="sm:hidden">Demo</span></button>
+        <button id="menuBtn" class="lg:hidden w-11 h-11 btn-brutal bg-[#FFC700] rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="lg:hidden hidden mt-2 bg-white border-[3px] border-ink rounded-2xl shadow-brutal p-4 font-bold">
+      <a href="#about" class="block px-4 py-3 rounded-xl hover:bg-yellow-100">About</a>
+      <a href="#solutions" class="block px-4 py-3 rounded-xl hover:bg-lime-100">Solutions</a>
+      <a href="#projects" class="block px-4 py-3 rounded-xl hover:bg-pink-100">15+ Projects</a>
+      <a href="#skills" class="block px-4 py-3 rounded-xl hover:bg-cyan-100">Skills</a>
+      <a href="#experience" class="block px-4 py-3 rounded-xl hover:bg-violet-100">Experience</a>
+      <a href="#contact" class="block px-4 py-3 rounded-xl hover:bg-orange-100">Contact</a>
+      <div class="pt-2 pb-1 border-t border-ink/10 mt-2">
+        <label class="block text-xs font-mono font-bold text-ink/70 mb-1.5">🌐 Select Language:</label>
+        <select id="mobileLangSelect" onchange="const opt=this.options[this.selectedIndex]; setLanguage(this.value, opt.text, opt.getAttribute('data-flag')); document.getElementById('mobileMenu').classList.add('hidden');" class="w-full border-2 border-ink rounded-xl px-3 py-2 text-xs font-bold bg-cream focus:outline-none">
+          <option value="en" data-flag="🇬🇧" selected>🇬🇧 English</option>
+          <option value="hi" data-flag="🇮🇳">🇮🇳 हिन्दी (Hindi)</option>
+          <option value="mr" data-flag="🇮🇳">🇮🇳 मराठी (Marathi)</option>
+          <option value="gu" data-flag="🇮🇳">🇮🇳 ગુજરાતી (Gujarati)</option>
+          <option value="bn" data-flag="🇮🇳">🇮🇳 বাংলা (Bengali)</option>
+          <option value="ta" data-flag="🇮🇳">🇮🇳 தமிழ் (Tamil)</option>
+          <option value="te" data-flag="🇮🇳">🇮🇳 తెలుగు (Telugu)</option>
+          <option value="ar" data-flag="🇸🇦">🇸🇦 العربية (Arabic)</option>
+          <option value="de" data-flag="🇩🇪">🇩🇪 Deutsch</option>
+          <option value="es" data-flag="🇪🇸">🇪🇸 Español</option>
+          <option value="fr" data-flag="🇫🇷">🇫🇷 Français</option>
+          <option value="ru" data-flag="🇷🇺">🇷🇺 Русский</option>
+          <option value="ja" data-flag="🇯🇵">🇯🇵 日本語</option>
+        </select>
+      </div>
+      <button onclick="document.getElementById('mobileMenu').classList.add('hidden'); scrollToContactForm()" class="mt-3 w-full flex btn-brutal bg-[#25D366] text-white justify-center px-4 py-3 rounded-xl font-sora"><i class="fa-solid fa-calendar-check mr-2 text-xl"></i> Book 15-Min Live Demo</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative pt-32 md:pt-40 pb-12 overflow-hidden grid-lines">
+  <div class="blob w-[420px] h-[420px] bg-[#FF2E93] -top-20 -left-20"></div>
+  <div class="blob w-[380px] h-[380px] bg-[#06B6D4] top-40 right-[-80px]" style="animation-delay:1.5s"></div>
+  <div class="blob w-[300px] h-[300px] bg-[#FFC700] bottom-0 left-1/3" style="animation-delay:3s"></div>
+  <div class="absolute inset-0 dot-grid opacity-[.12] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-center">
+    <div>
+      <div class="reveal flex flex-wrap items-center gap-3 mb-5">
+        <span class="sticker bg-[#A3E635] rounded-full px-4 py-1.5 text-xs font-extrabold font-mono inline-flex items-center gap-2 rotate-[-2deg]"><span class="w-2.5 h-2.5 bg-ink rounded-full animate-ping"></span> OPEN FOR ERP CLIENTS & PROJECTS</span>
+        <span class="sticker bg-white rounded-full px-4 py-1.5 text-xs font-bold inline-flex items-center gap-2 rotate-[2deg]"><i class="fa-solid fa-location-dot text-hotpink"></i> Mumbai, India • <span id="mumbaiTime2" class="font-mono">IST</span></span>
+      </div>
+
+      <p class="reveal font-mono font-bold text-sm md:text-base mb-3"><span class="bg-ink text-[#A3E635] px-3 py-1 rounded-lg">👋 Hello, I'm</span></p>
+      <h1 class="reveal font-sora font-extrabold leading-[.95] tracking-tight text-[40px] sm:text-6xl xl:text-[74px]">
+        SHYAMKUMAR<br/>
+        <span class="grad-text">BHUPENDRA</span><br/>
+        PANDEY
+      </h1>
+      <div class="reveal mt-4 text-xl md:text-2xl font-sora font-bold h-[36px] md:h-[40px]">
+        <span class="text-ink/60">I am a</span> <span id="typewriter" class="grad-text type-caret"></span>
+      </div>
+      <p class="reveal mt-4 text-[16px] md:text-lg text-ink/70 font-medium max-w-xl leading-relaxed">
+        <strong class="text-ink">Senior ERPNext Developer</strong>, <strong class="text-ink">Python & Integration Specialist</strong> and <strong class="text-ink">Team Lead</strong> crafting custom ERP ecosystems for <span class="bg-[#FFC700] px-1.5 py-[1px] border-2 border-ink rounded-md font-bold text-ink">Real Estate, Jewelry, Schools & Manufacturing</span> with WhatsApp, Exotel & Biometric IoT integrations.
+      </p>
+
+      <div class="reveal flex flex-wrap gap-3 mt-7">
+        <a href="#projects" class="magnetic btn-brutal grad-bg text-white font-sora font-bold px-7 py-3.5 rounded-2xl inline-flex items-center gap-2"><i class="fa-solid fa-layer-group"></i> Explore 15+ Projects</a>
+        <button onclick="scrollToContactForm()" class="magnetic btn-brutal bg-[#25D366] text-white font-sora font-bold px-7 py-3.5 rounded-2xl inline-flex items-center gap-2"><i class="fa-solid fa-calendar-check text-lg"></i> Book Live Demo</button>
+        <a href="https://linkedin.com/in/shyamkumarpandey" target="_blank" class="magnetic btn-brutal bg-[#0A66C2] text-white font-bold px-5 py-3.5 rounded-2xl inline-flex items-center gap-2" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-xl"></i></a>
+      </div>
+
+      <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 max-w-2xl">
+        <div class="card-brutal rounded-2xl p-4 text-center rotate-[-1deg] bg-[#FFF1F7]">
+          <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="15">0</span>+</div>
+          <div class="text-xs font-bold mt-1 uppercase tracking-wide">ERP/CRM Deployed</div>
+        </div>
+        <div class="card-brutal rounded-2xl p-4 text-center rotate-[1deg] bg-[#F1FBFF]">
+          <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="4">0</span>+</div>
+          <div class="text-xs font-bold mt-1 uppercase tracking-wide">Years Frappe/Python</div>
+        </div>
+        <div class="card-brutal rounded-2xl p-4 text-center rotate-[-1deg] bg-[#FFF8E1]">
+          <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="50">0</span>+</div>
+          <div class="text-xs font-bold mt-1 uppercase tracking-wide">APIs & Hardware</div>
+        </div>
+        <div class="card-brutal rounded-2xl p-4 text-center rotate-[1deg] bg-[#EFFFEF]">
+          <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="40">0</span>%</div>
+          <div class="text-xs font-bold mt-1 uppercase tracking-wide">Faster Workflows</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="reveal relative flex justify-center lg:justify-end">
+      <div class="relative">
+        <div class="absolute -inset-4 grad-bg rounded-[28px] rotate-[6deg] opacity-90"></div>
+        <div class="absolute -inset-4 bg-[#FFC700] rounded-[28px] rotate-[-4deg] border-[3px] border-ink"></div>
+        <div id="tiltCard" class="tilt-card relative w-[320px] sm:w-[360px] bg-white border-[3px] border-ink rounded-[24px] shadow-brutalLg overflow-hidden">
+          <div class="grad-bg px-5 pt-5 pb-16 relative">
+            <div class="absolute inset-0 dot-grid-light opacity-40"></div>
+            <div class="relative flex items-center justify-between text-white">
+              <span class="font-mono text-xs bg-black/40 px-3 py-1 rounded-full border border-white/40">● SHYAM PANDEY</span>
+              <span class="font-mono text-xs bg-[#A3E635] text-ink px-3 py-1 rounded-full border-2 border-ink font-bold">ERPNEXT DEVELOPER</span>
+            </div>
+          </div>
+          <div class="px-6 pb-6 -mt-12 relative">
+            <div class="w-24 h-24 rounded-2xl border-[3px] border-ink overflow-hidden shadow-brutalSm rotate-[-4deg] bg-white">
+              <img src="./profile.jpg" alt="Shyamkumar Pandey" class="w-full h-full object-cover"/>
+            </div>
+            <h3 class="font-sora font-extrabold text-xl mt-3 leading-tight">Shyamkumar B. Pandey</h3>
+            <p class="text-sm font-semibold text-ink/60">Senior ERPNext Developer • Team Lead</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="text-[10.5px] font-mono font-bold bg-[#FF2E93]/10 text-[#FF2E93] border-2 border-ink rounded-full px-2 py-0.5">⚡ Frappe / ERPNext</span>
+              <span class="text-[10.5px] font-mono font-bold bg-[#06B6D4]/15 text-[#0891b2] border-2 border-ink rounded-full px-2 py-0.5">💬 WhatsApp API</span>
+              <span class="text-[10.5px] font-mono font-bold bg-[#A3E635]/20 text-ink border-2 border-ink rounded-full px-2 py-0.5">🏷️ RFID & Biometric</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+              <div class="bg-cream border-2 border-ink rounded-xl py-2"><div class="font-extrabold font-sora">15+</div><div class="text-[10px] font-bold uppercase">Apps Built</div></div>
+              <div class="bg-cream border-2 border-ink rounded-xl py-2"><div class="font-extrabold font-sora">IEEE</div><div class="text-[10px] font-bold uppercase">Researcher</div></div>
+              <div class="bg-cream border-2 border-ink rounded-xl py-2"><div class="font-extrabold font-sora">99.5%</div><div class="text-[10px] font-bold uppercase">Uptime</div></div>
+            </div>
+            <div class="flex gap-2 mt-4">
+              <a href="tel:+919867778229" class="flex-1 btn-brutal bg-ink text-white text-xs font-bold py-2.5 rounded-xl text-center"><i class="fa-solid fa-phone mr-1"></i> +91 98677 78229</a>
+              <a href="mailto:shyampandey1104@gmail.com" class="flex-1 btn-brutal grad-bg4 text-ink text-xs font-bold py-2.5 rounded-xl text-center border-[3px]"><i class="fa-solid fa-envelope mr-1"></i> Email Me</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Stickers -->
+        <div class="absolute -left-10 top-6 sticker bg-white rounded-2xl px-3 py-2 flex items-center gap-2 float-slow z-20" style="--r:-8deg"><span class="w-9 h-9 grad-bg rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-gem"></i></span><div class="text-xs font-extrabold leading-tight">Jewelry<br/><span class="text-hotpink">MS Expert</span></div></div>
+        <div class="absolute -right-8 top-1/4 sticker bg-[#FFC700] rounded-2xl px-3 py-2 flex items-center gap-2 float-slower z-20" style="--r:6deg"><span class="text-2xl">🏢</span><div class="text-xs font-extrabold leading-tight">Real Estate<br/>CRM Suite</div></div>
+        <div class="absolute -left-10 bottom-28 sticker bg-[#A3E635] rounded-2xl px-3 py-2 flex items-center gap-2 float-slow z-20" style="--r:4deg"><i class="fa-solid fa-school text-lg"></i><div class="text-xs font-extrabold leading-tight">School ERP<br/>+ WhatsApp</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="mt-12 -rotate-1">
+    <div class="bg-ink text-white border-y-[3px] border-ink py-3 overflow-hidden">
+      <div class="marquee-track font-sora font-extrabold text-lg gap-0" id="marquee1"></div>
+    </div>
+    <div class="grad-bg border-b-[3px] border-ink py-2.5 overflow-hidden">
+      <div class="marquee-track font-mono font-bold text-sm text-white" id="marquee2" style="animation-direction:reverse; animation-duration:28s;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY WORK WITH SHYAMKUMAR -->
+<section id="about" class="relative py-16 md:py-24 bg-[#FFFDF9] border-t-[3px] border-ink overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
+    <div class="flex items-center gap-3 mb-3 reveal">
+      <span class="sticker bg-[#FFC700] text-ink font-mono font-bold text-xs px-4 py-1.5 rounded-full rotate-[-2deg] border-2">01 • WHY WORK WITH ME ⚡</span>
+    </div>
+
+    <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-center">
+      <div>
+        <h2 class="reveal font-sora font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.15]">
+          One Tailor-Made ERP to <span class="bg-[#FF2E93] text-white px-2.5 py-0.5 rounded-xl inline-block rotate-[-1deg]">Run Your Entire Business</span>
+        </h2>
+
+        <!-- Visual Transformation: Scattered Apps vs Unified Custom ERP -->
+        <div class="reveal mt-5 bg-white border-[2.5px] border-ink rounded-2xl p-5 shadow-brutalSm">
+          <div class="grid sm:grid-cols-[1fr_auto_1.15fr] gap-4 items-center">
+            <!-- Left: What businesses struggle with -->
+            <div>
+              <div class="font-mono text-[11px] font-bold text-red-600 flex items-center gap-1.5 uppercase">
+                <span>❌</span> <span>Stop Paying for Separate Subscriptions:</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">HRMS & Attendance</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Payroll & Salaries</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Manufacturing & BOM</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Accounting & GST E-Invoicing</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Buying & Procurement</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Selling & CRM Pipeline</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Inventory & Multi-Warehouse</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Projects & Timesheets</span>
+                <span class="text-[11px] font-bold bg-red-50 text-red-700 border border-red-200 px-2 py-0.5 rounded-md">Disconnected Excel Sheets</span>
+              </div>
+            </div>
+
+            <!-- Middle divider / Arrow -->
+            <div class="hidden sm:flex flex-col items-center justify-center text-ink/30 text-2xl font-bold">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <!-- Right: The Shyamkumar Unified ERP Solution -->
+            <div class="bg-[#EFFFEF] border-2 border-[#16a34a] rounded-xl p-4 shadow-sm">
+              <div class="font-mono text-[11px] font-bold text-green-700 flex items-center gap-1.5 uppercase">
+                <span>✅</span> <span>Get Everything Unified in 1 System</span>
+              </div>
+              <p class="text-xs font-bold text-ink mt-1.5 leading-relaxed">
+                Deploy <b>Standard ERPNext Modules</b> or build <b>100% Custom Frappe Apps & DocTypes</b> for unique business workflows not available in default ERPNext — with full hardware, WhatsApp & React frontend support!
+              </p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="text-[10.5px] font-mono font-bold bg-white text-green-900 border border-green-300 px-2 py-0.5 rounded-md shadow-xs">📦 All Standard ERPNext Modules</span>
+                <span class="text-[10.5px] font-mono font-bold bg-white text-green-900 border border-green-300 px-2 py-0.5 rounded-md shadow-xs">⚡ Custom Frappe Apps & DocTypes</span>
+                <span class="text-[10.5px] font-mono font-bold bg-white text-green-900 border border-green-300 px-2 py-0.5 rounded-md shadow-xs">⚛️ Headless React UI & Portals</span>
+                <span class="text-[10.5px] font-mono font-bold bg-white text-green-900 border border-green-300 px-2 py-0.5 rounded-md shadow-xs">🏷️ Biometrics, RFID & WhatsApp Sync</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal mt-4 text-[15.5px] md:text-lg text-ink/80 font-medium leading-relaxed">
+          I am a <strong>Senior ERPNext Developer & Team Lead</strong> (<span class="font-bold text-[#7C3AED]">Electronics & Telecom Engineer and IEEE Published Researcher</span>). Whether you need <strong>standard ERPNext modules customized & deployed</strong>, third-party <strong>hardware/API integrations</strong>, or a <strong>completely custom app built with Frappe backend & modern React frontend</strong> — I deliver end-to-end, production-ready systems.
+        </p>
+
+        <!-- 4 Flexible Delivery Modes -->
+        <div class="reveal grid sm:grid-cols-2 gap-3.5 mt-6">
+          <div class="bg-white border-[2.5px] border-ink rounded-2xl p-4 shadow-brutalSm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl grad-bg text-white flex items-center justify-center text-lg shrink-0">⚙️</div>
+            <div>
+              <div class="font-sora font-extrabold text-sm text-ink">Customized ERPNext Deployment</div>
+              <div class="text-xs text-ink/65 font-medium mt-0.5">HRMS, Payroll, Manufacturing, Accounts & CRM tailored with your custom DocTypes & workflows.</div>
+            </div>
+          </div>
+          <div class="bg-white border-[2.5px] border-ink rounded-2xl p-4 shadow-brutalSm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#0F0F1A] text-[#61DAFB] flex items-center justify-center text-lg shrink-0"><i class="fa-brands fa-react"></i></div>
+            <div>
+              <div class="font-sora font-extrabold text-sm text-ink">Headless ERP + Custom React UI</div>
+              <div class="text-xs text-ink/65 font-medium mt-0.5">ERPNext running robustly in the backend, paired with a pixel-perfect, bespoke React frontend.</div>
+            </div>
+          </div>
+          <div class="bg-white border-[2.5px] border-ink rounded-2xl p-4 shadow-brutalSm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl grad-bg3 text-ink flex items-center justify-center text-lg shrink-0">🏷️</div>
+            <div>
+              <div class="font-sora font-extrabold text-sm text-ink">Hardware & Third-Party APIs</div>
+              <div class="text-xs text-ink/65 font-medium mt-0.5">Direct sync with Biometrics (ZKTeco/eSSL), RFID smart tagging, WhatsApp Cloud & Exotel calling.</div>
+            </div>
+          </div>
+          <div class="bg-white border-[2.5px] border-ink rounded-2xl p-4 shadow-brutalSm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl grad-bg4 text-white flex items-center justify-center text-lg shrink-0">⚡</div>
+            <div>
+              <div class="font-sora font-extrabold text-sm text-ink">Rapid Sprints & Migration</div>
+              <div class="text-xs text-ink/65 font-medium mt-0.5">Fast 2-4 week delivery, seamless Excel legacy data migration, and zero business downtime.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal flex flex-wrap items-center gap-3 mt-8">
+          <button onclick="scrollToContactForm()" class="btn-brutal grad-bg text-white font-sora font-bold px-7 py-3.5 rounded-2xl flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check"></i> Book a 15-Min Live Demo
+          </button>
+          <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20let's%20discuss%20an%20ERP%20solution%20for%20my%20business." target="_blank" class="btn-brutal bg-[#25D366] text-white font-sora font-bold px-6 py-3.5 rounded-2xl flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Direct
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Client Value Matrix Card -->
+      <div class="reveal bg-ink text-white border-[3.5px] border-ink rounded-[28px] p-6 md:p-8 shadow-brutalLg relative overflow-hidden">
+        <div class="blob w-[260px] h-[260px] bg-[#FF2E93] -top-10 -right-10 opacity-30"></div>
+        <div class="relative z-10">
+          <div class="flex items-center justify-between pb-4 border-b border-white/15">
+            <div>
+              <span class="font-mono text-xs font-bold text-[#A3E635]">● DIRECT IMPACT</span>
+              <h3 class="font-sora font-extrabold text-xl mt-0.5">Automated Workflows</h3>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🚀</div>
+          </div>
+
+          <div class="space-y-4 mt-5 text-xs md:text-sm font-medium">
+            <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+              <div class="flex items-center justify-between font-sora font-extrabold text-[#FFC700]">
+                <span>🏢 Real Estate CRM</span>
+                <span>Auto-Routing</span>
+              </div>
+              <p class="text-white/70 text-[11.5px] mt-1">FB/Google Ads $\rightarrow$ instant agent assignment $\rightarrow$ Exotel 1-click call $\rightarrow$ Aadhaar/PAN KYC check.</p>
+            </div>
+
+            <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+              <div class="flex items-center justify-between font-sora font-extrabold text-[#06B6D4]">
+                <span>💎 Jewelry MS</span>
+                <span>Zero Wastage</span>
+              </div>
+              <p class="text-white/70 text-[11.5px] mt-1">Karigar job-cards $\rightarrow$ automated melting loss $\rightarrow$ purity conversion $\rightarrow$ RFID bullion security.</p>
+            </div>
+
+            <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+              <div class="flex items-center justify-between font-sora font-extrabold text-[#A3E635]">
+                <span>🏫 School & Institute ERP</span>
+                <span>Parent Connect</span>
+              </div>
+              <p class="text-white/70 text-[11.5px] mt-1">Biometric/RFID tap $\rightarrow$ auto WhatsApp absent alert $\rightarrow$ fee due reminders $\rightarrow$ online payment gateway.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-white/70 font-mono">
+            <span>📍 Mumbai & Global Remote</span>
+            <span class="text-[#A3E635] font-bold">⚡ Ready to Deploy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS / VALUE PROPOSITION -->
+<section id="solutions" class="relative py-16 md:py-24 bg-white border-y-[3px] border-ink overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
+    <div class="flex items-center gap-3 mb-3 reveal">
+      <span class="sticker grad-bg text-white font-mono font-bold text-xs px-4 py-1.5 rounded-full rotate-[-2deg]">02 • CORE CLIENT OFFERINGS</span>
+    </div>
+    <h2 class="reveal font-sora font-extrabold text-4xl md:text-5xl tracking-tight">Turn Manual Excel Chaos into <span class="grad-text">Automated Profit</span> 🚀</h2>
+    <p class="reveal mt-3 text-ink/70 text-[16.5px] max-w-2xl font-medium">I don't just write code — I build tailored, ready-to-deploy enterprise engines that eliminate errors and scale your business operations.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <!-- Card 1: School ERP -->
+      <div class="reveal card-brutal rounded-3xl p-7 bg-[#FFF8EC] flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl grad-bg text-white border-[3px] border-ink flex items-center justify-center text-2xl shadow-brutalSm">🏫</div>
+          <h3 class="font-sora font-extrabold text-2xl mt-4">School & Institute ERP</h3>
+          <p class="text-sm font-medium text-ink/70 mt-2">Multi-branch student lifecycle, biometric attendance, pre/post exam grade analytics and automated fees.</p>
+          <ul class="mt-4 space-y-2 text-sm font-bold text-ink/80">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> WhatsApp absent & fee dues alerts</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> RFID / Biometric smart card tap-in</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Online payment gateway & invoices</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20see%20a%20demo%20of%20School%20ERP." target="_blank" class="mt-6 btn-brutal grad-bg text-white font-sora font-bold text-center py-3 rounded-xl text-sm">Book School ERP Demo →</a>
+      </div>
+
+      <!-- Card 2: Real Estate CRM -->
+      <div class="reveal card-brutal rounded-3xl p-7 bg-[#F0FDF4] flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl grad-bg2 text-white border-[3px] border-ink flex items-center justify-center text-2xl shadow-brutalSm">🏢</div>
+          <h3 class="font-sora font-extrabold text-2xl mt-4">Real Estate CRM</h3>
+          <p class="text-sm font-medium text-ink/70 mt-2">End-to-end sales engine with click-to-call telephony, lead routing from FB/Google Ads & KYC verification.</p>
+          <ul class="mt-4 space-y-2 text-sm font-bold text-ink/80">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Exotel / Twilio 1-click calling & recording</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Instant Aadhaar / PAN KYC API check</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Site visit scheduler & broker payouts</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20see%20a%20demo%20of%20Real%20Estate%20CRM." target="_blank" class="mt-6 btn-brutal grad-bg2 text-white font-sora font-bold text-center py-3 rounded-xl text-sm">Book Real Estate Demo →</a>
+      </div>
+
+      <!-- Card 3: Jewelry MS -->
+      <div class="reveal card-brutal rounded-3xl p-7 bg-[#FFF1F2] flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl grad-bg4 text-white border-[3px] border-ink flex items-center justify-center text-2xl shadow-brutalSm">💎</div>
+          <h3 class="font-sora font-extrabold text-2xl mt-4">Jewelry Manufacturing MS</h3>
+          <p class="text-sm font-medium text-ink/70 mt-2">Complete karigar job-card ledger, gold purity conversion, melting loss tracking & high-value stock security.</p>
+          <ul class="mt-4 space-y-2 text-sm font-bold text-ink/80">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Worker-wise metal wastage calculations</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Barcode & RFID bullion inventory</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Daily melting & casting yield reports</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20see%20a%20demo%20of%20Jewelry%20Manufacturing%20ERP." target="_blank" class="mt-6 btn-brutal grad-bg4 text-ink font-sora font-bold text-center py-3 rounded-xl text-sm">Book Jewelry MS Demo →</a>
+      </div>
+    </div>
+
+    <!-- FULL-CYCLE PRODUCT ENGINEERING & ARCHITECTURE -->
+    <div class="reveal mt-12 bg-ink text-white border-[3.5px] border-ink rounded-[32px] p-7 md:p-12 shadow-brutalLg relative overflow-hidden">
+      <div class="blob w-[380px] h-[380px] bg-[#7C3AED] top-0 -right-20 opacity-40"></div>
+      <div class="blob w-[320px] h-[320px] bg-[#FF2E93] bottom-0 -left-20 opacity-30"></div>
+      <div class="absolute inset-0 dot-grid-light opacity-20 pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="sticker grad-bg3 text-ink font-mono font-bold text-xs px-4 py-1.5 rounded-full inline-block rotate-[-1deg] border-2">⚙️ FULL-CYCLE PRODUCT ENGINEERING & SYSTEM ARCHITECTURE</span>
+            <h3 class="font-sora font-extrabold text-3xl md:text-5xl mt-3 tracking-tight">Enterprise Software Built to <span class="grad-text">Scale & Never Crash</span></h3>
+          </div>
+          <button onclick="openDemoModal()" class="btn-brutal bg-[#A3E635] text-ink font-sora font-bold px-6 py-3.5 rounded-2xl flex items-center gap-2 hover:bg-[#FFC700] transition shrink-0">
+            <span>Consult Architecture</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="text-white/70 text-[15.5px] md:text-lg font-medium mt-3 max-w-3xl leading-relaxed">
+          Transforming complex operational workflows into high-performance, fault-tolerant software products. From multi-tenant Frappe DocType modeling to real-time IoT gateways and automated cloud infrastructure.
+        </p>
+
+        <!-- 4 Core Pillars -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+          <div class="bg-white/10 border-2 border-white/20 rounded-2xl p-5 backdrop-blur hover:border-[#FF2E93] transition">
+            <div class="w-11 h-11 grad-bg rounded-xl flex items-center justify-center text-xl text-white mb-3">🏢</div>
+            <div class="font-sora font-extrabold text-base text-white">Multi-Tenant SaaS</div>
+            <p class="text-xs text-white/70 font-medium mt-1.5 leading-relaxed">Centralized codebase supporting isolated company domains, branch hierarchies & custom schemas.</p>
+          </div>
+          <div class="bg-white/10 border-2 border-white/20 rounded-2xl p-5 backdrop-blur hover:border-[#06B6D4] transition">
+            <div class="w-11 h-11 grad-bg3 rounded-xl flex items-center justify-center text-xl text-ink mb-3">🛡️</div>
+            <div class="font-sora font-extrabold text-base text-white">RBAC & Security</div>
+            <p class="text-xs text-white/70 font-medium mt-1.5 leading-relaxed">Granular role-based permissions, encrypted data-at-rest, audit logs and bank-grade session security.</p>
+          </div>
+          <div class="bg-white/10 border-2 border-white/20 rounded-2xl p-5 backdrop-blur hover:border-[#FFC700] transition">
+            <div class="w-11 h-11 grad-bg4 rounded-xl flex items-center justify-center text-xl text-ink mb-3">🏷️</div>
+            <div class="font-sora font-extrabold text-base text-white">IoT & Telephony Sync</div>
+            <p class="text-xs text-white/70 font-medium mt-1.5 leading-relaxed">Low-latency daemon scripts connecting biometric clocks, RFID readers, weighing scales & Exotel IVR.</p>
+          </div>
+          <div class="bg-white/10 border-2 border-white/20 rounded-2xl p-5 backdrop-blur hover:border-[#A3E635] transition">
+            <div class="w-11 h-11 grad-bg2 rounded-xl flex items-center justify-center text-xl text-white mb-3">⚡</div>
+            <div class="font-sora font-extrabold text-base text-white">Headless ERP & APIs</div>
+            <p class="text-xs text-white/70 font-medium mt-1.5 leading-relaxed">Fast REST & Webhook endpoints to power custom React web apps, mobile apps and 3rd-party portals.</p>
+          </div>
+        </div>
+
+        <!-- 5-Stage Engineering Lifecycle -->
+        <div class="mt-10 pt-8 border-t border-white/15">
+          <div class="flex items-center justify-between mb-6">
+            <div class="font-sora font-extrabold text-xl md:text-2xl text-[#FFC700]">The 5-Stage Product Engineering Methodology 🛠️</div>
+            <span class="font-mono text-xs bg-white/10 text-white/80 px-3 py-1 rounded-full border border-white/20 hidden sm:inline-block">Agile • High Uptime • Zero Data Leakage</span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+            <!-- Stage 1 -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-4.5 hover:bg-white/10 transition">
+              <div class="font-mono text-xs font-bold text-[#FF2E93] mb-1">STAGE 01</div>
+              <div class="font-sora font-extrabold text-sm text-white">Architecture & Modeling</div>
+              <p class="text-xs text-white/60 font-medium mt-2 leading-relaxed">Business process mapping, custom DocType modeling, database normalization & Redis cache topology.</p>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-4.5 hover:bg-white/10 transition">
+              <div class="font-mono text-xs font-bold text-[#7C3AED] mb-1">STAGE 02</div>
+              <div class="font-sora font-extrabold text-sm text-white">Core Custom Engineering</div>
+              <p class="text-xs text-white/60 font-medium mt-2 leading-relaxed">Python/Frappe backend engines, server scripts, client side JS triggers and intuitive UI dashboards.</p>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-4.5 hover:bg-white/10 transition">
+              <div class="font-mono text-xs font-bold text-[#06B6D4] mb-1">STAGE 03</div>
+              <div class="font-sora font-extrabold text-sm text-white">Hardware & API Sync</div>
+              <p class="text-xs text-white/60 font-medium mt-2 leading-relaxed">Biometric push SDKs, RFID scanning, WhatsApp Cloud messaging triggers, Aadhaar/PAN KYC verification.</p>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-4.5 hover:bg-white/10 transition">
+              <div class="font-mono text-xs font-bold text-[#FFC700] mb-1">STAGE 04</div>
+              <div class="font-sora font-extrabold text-sm text-white">Legacy Modernization</div>
+              <p class="text-xs text-white/60 font-medium mt-2 leading-relaxed">Migrating legacy FoxPro/Tally/Excel records into relational Frappe databases with zero downtime.</p>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-4.5 hover:bg-white/10 transition">
+              <div class="font-mono text-xs font-bold text-[#A3E635] mb-1">STAGE 05</div>
+              <div class="font-sora font-extrabold text-sm text-white">DevOps & 99.5% Uptime</div>
+              <p class="text-xs text-white/60 font-medium mt-2 leading-relaxed">Dockerized deployment, RQ/Celery background queue management, MariaDB query tuning & CI/CD pipelines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION (15+ PROJECTS) -->
+<section id="projects" class="relative py-16 md:py-24 bg-cream overflow-hidden grid-lines">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <span class="reveal sticker grad-bg2 text-white font-mono font-bold text-xs px-4 py-1.5 rounded-full inline-block rotate-[-2deg]">03 • CLIENT CASE STUDIES & 15+ PROJECTS 🚀</span>
+        <h2 class="reveal font-sora font-extrabold text-4xl md:text-5xl mt-4 tracking-tight">Proven ERP <span class="grad-text">Mastery</span></h2>
+        <p class="reveal text-ink/60 font-medium mt-2 max-w-xl">15+ custom enterprise implementations built across Education, Real Estate, Manufacturing, NGOs & Integrations. Click any card for detailed specs & architecture.</p>
+      </div>
+      <div class="reveal flex flex-wrap gap-2">
+        <button data-pfilter="all" class="pfilter-btn active btn-brutal bg-ink text-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">✨ All (16)</button>
+        <button data-pfilter="school" class="pfilter-btn btn-brutal bg-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">🏫 School</button>
+        <button data-pfilter="crm" class="pfilter-btn btn-brutal bg-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">🏢 Real Estate</button>
+        <button data-pfilter="mfg" class="pfilter-btn btn-brutal bg-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">💎 Jewelry / Mfg</button>
+        <button data-pfilter="integ" class="pfilter-btn btn-brutal bg-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">🔗 Integrations</button>
+        <button data-pfilter="erp" class="pfilter-btn btn-brutal bg-white font-bold text-xs md:text-sm px-4 py-2 rounded-full">📦 Core ERP</button>
+      </div>
+    </div>
+
+    <!-- Grid of Projects -->
+    <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"></div>
+
+    <!-- ROI CALCULATOR -->
+    <div class="reveal mt-14 card-brutal rounded-[28px] overflow-hidden">
+      <div class="grid lg:grid-cols-2">
+        <div class="p-7 md:p-10 bg-white">
+          <span class="font-mono font-bold text-xs bg-[#A3E635] border-2 border-ink rounded-full px-3 py-1">🧮 INTERACTIVE • AUTOMATION ROI CALCULATOR</span>
+          <h3 class="font-sora font-extrabold text-3xl mt-3">How much could <span class="grad-text">your business save?</span></h3>
+          <p class="text-ink/60 font-medium text-sm mt-2">Calculate the direct financial leakage eliminated when you switch from Excel/manual work to custom ERPNext.</p>
+          <div class="space-y-6 mt-6">
+            <div>
+              <div class="flex justify-between font-bold text-sm mb-2"><label>Manual hours / week per employee</label><span id="vHours" class="bg-ink text-white px-2.5 py-[2px] rounded-lg font-mono">20 hrs</span></div>
+              <input id="inHours" type="range" min="2" max="40" value="20"/>
+            </div>
+            <div>
+              <div class="flex justify-between font-bold text-sm mb-2"><label>Team members doing manual work</label><span id="vTeam" class="bg-ink text-white px-2.5 py-[2px] rounded-lg font-mono">5 people</span></div>
+              <input id="inTeam" type="range" min="1" max="25" value="5"/>
+            </div>
+            <div>
+              <div class="flex justify-between font-bold text-sm mb-2"><label>Average hourly cost (₹)</label><span id="vRate" class="bg-ink text-white px-2.5 py-[2px] rounded-lg font-mono">₹800</span></div>
+              <input id="inRate" type="range" min="300" max="3000" step="50" value="800"/>
+            </div>
+          </div>
+        </div>
+        <div class="grad-bg p-7 md:p-10 text-white relative overflow-hidden flex flex-col justify-center">
+          <div class="absolute inset-0 dot-grid-light opacity-30"></div>
+          <div class="relative">
+            <p class="font-mono text-xs bg-black/30 inline-block px-3 py-1 rounded-full border border-white/30">💡 ANNUAL RECOVERED LEAKAGE</p>
+            <div class="grid grid-cols-2 gap-3 mt-4">
+              <div class="bg-white text-ink border-[3px] border-ink rounded-2xl p-4 text-center shadow-[5px_5px_0_rgba(0,0,0,.4)]"><div class="font-sora font-extrabold text-2xl md:text-3xl" id="outHours">4,420</div><div class="text-xs font-bold uppercase">hrs saved / year</div></div>
+              <div class="bg-[#FFC700] text-ink border-[3px] border-ink rounded-2xl p-4 text-center shadow-[5px_5px_0_rgba(0,0,0,.4)]"><div class="font-sora font-extrabold text-2xl md:text-3xl" id="outMoney">₹35.3L</div><div class="text-xs font-bold uppercase">saved / year</div></div>
+            </div>
+            <div class="bg-white/15 border-2 border-white/30 rounded-2xl p-4 mt-4 backdrop-blur">
+              <div class="flex justify-between text-sm font-bold"><span>Operational Efficiency Gain</span><span id="outEff">+85%</span></div>
+              <div class="h-3 bg-black/30 rounded-full mt-2 overflow-hidden"><div id="outBar" class="h-full bg-[#A3E635] rounded-full transition-all duration-500" style="width:85%"></div></div>
+              <p class="text-xs text-white/80 mt-2 font-medium">Custom ERPNext workflows eliminate ~85% of redundant manual entry, sync mismatches & late follow-ups.</p>
+            </div>
+            <button onclick="openDemoModal()" class="mt-5 inline-flex justify-center btn-brutal bg-white text-ink font-sora font-bold px-6 py-3.5 rounded-2xl w-full">Claim this ROI for your business →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="relative py-16 md:py-24 overflow-hidden" style="background:linear-gradient(180deg,#FFF8EC 0%,#FFF0F7 50%,#F0F4FF 100%)">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="reveal sticker grad-bg3 font-mono font-bold text-xs px-4 py-1.5 rounded-full inline-block rotate-[2deg] text-ink border-[3px]">04 • TECHNICAL ARSENAL 🛠️</span>
+      <h2 class="reveal font-sora font-extrabold text-4xl md:text-5xl mt-4 tracking-tight">Full-Stack ERP & <span class="grad-text">Hardware APIs</span></h2>
+      <p class="reveal text-ink/60 font-medium mt-3">From database indexes to physical IoT sensors, here is the complete tech stack I deploy.</p>
+    </div>
+
+    <div class="reveal flex flex-wrap justify-center gap-2 mt-8">
+      <button data-filter="all" class="filter-btn active btn-brutal bg-white font-bold text-sm px-5 py-2 rounded-full">✨ All</button>
+      <button data-filter="erp" class="filter-btn btn-brutal bg-white font-bold text-sm px-5 py-2 rounded-full">⚡ ERP & Frameworks</button>
+      <button data-filter="hardware" class="filter-btn btn-brutal bg-white font-bold text-sm px-5 py-2 rounded-full">🏷️ IoT, Biometric & KYC</button>
+      <button data-filter="backend" class="filter-btn btn-brutal bg-white font-bold text-sm px-5 py-2 rounded-full">🐍 Backend & DB</button>
+      <button data-filter="infra" class="filter-btn btn-brutal bg-white font-bold text-sm px-5 py-2 rounded-full">🐳 DevOps & Cloud</button>
+    </div>
+
+    <div id="skillsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="relative py-16 md:py-24 bg-ink text-white overflow-hidden">
+  <div class="blob w-[400px] h-[400px] bg-[#7C3AED] -top-20 left-1/4 opacity-50"></div>
+  <div class="blob w-[350px] h-[350px] bg-[#FF2E93] bottom-0 right-0 opacity-40"></div>
+  <div class="absolute inset-0 dot-grid-light opacity-20"></div>
+  <div class="max-w-6xl mx-auto px-4 md:px-6 relative">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="reveal inline-block sticker bg-[#FFC700] text-ink font-mono font-bold text-xs px-4 py-1.5 rounded-full rotate-[-2deg]">05 • WORK EXPERIENCE & TRACK RECORD 💼</span>
+      <h2 class="reveal font-sora font-extrabold text-4xl md:text-5xl mt-4 tracking-tight">Engineering <span class="grad-text">Leadership</span></h2>
+      <p class="reveal text-white/60 font-medium mt-3">Delivering enterprise-scale ERP solutions, leading developer teams, and achieving 99.5% system reliability.</p>
+    </div>
+
+    <div class="relative mt-12">
+      <div class="timeline-line hidden md:block"></div>
+      <div class="timeline-line md:hidden"></div>
+      <div id="expList" class="space-y-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CREDENTIALS -->
+<section id="education" class="relative py-16 md:py-24 bg-white border-y-[3px] border-ink overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="text-center">
+      <span class="reveal sticker bg-[#A3E635] font-mono font-bold text-xs px-4 py-1.5 rounded-full inline-block rotate-[2deg]">06 • ACADEMIC & RESEARCH CREDENTIALS 🎓</span>
+      <h2 class="reveal font-sora font-extrabold text-4xl md:text-5xl mt-4">Engineering <span class="grad-text">Foundation</span></h2>
+    </div>
+    <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-6 mt-10">
+      <div class="reveal card-brutal rounded-3xl p-6 md:p-8 grad-bg4 text-white relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute inset-0 dot-grid-light opacity-30"></div>
+        <div class="relative flex flex-col h-full justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-white border-[2.5px] border-ink rounded-xl flex items-center justify-center text-2xl shadow-[3px_3px_0_#0F0F1A]">📜</div>
+                <div>
+                  <div class="font-mono text-xs font-bold bg-ink px-3 py-1 rounded-full text-white inline-block">IEEE PUBLISHED RESEARCHER</div>
+                  <div class="font-sora font-extrabold text-sm text-ink mt-0.5">ICAST 2022 • IEEE Xplore</div>
+                </div>
+              </div>
+              <a href="https://ieeexplore.ieee.org/document/10039595" target="_blank" class="font-mono text-xs font-bold bg-white text-ink hover:bg-ink hover:text-white px-3.5 py-1.5 rounded-full border-2 border-ink transition flex items-center gap-1.5 shadow-[3px_3px_0_#0F0F1A]">Live Paper ↗</a>
+            </div>
+
+            <h3 class="font-sora font-extrabold text-xl md:text-2xl mt-4 leading-snug">Finger Motion Controlled Biomedical Wheelchair</h3>
+            <p class="text-white/90 text-xs md:text-sm mt-1">Authors: Samruddhi Pawar, <strong>Shyamkumar Pandey</strong>, Suyog Kedar, Mayuresh Jadhav, Shridhar Sahu.</p>
+
+            <!-- Big High-Resolution Full-Width IEEE Paper Image Showcase -->
+            <a href="https://ieeexplore.ieee.org/document/10039595" target="_blank" class="block mt-4 rounded-2xl overflow-hidden border-[3px] border-ink shadow-[6px_6px_0_#0F0F1A] bg-white group relative">
+              <img src="./ieee_paper.png" alt="IEEE Xplore Research Paper - Shyamkumar Pandey" class="w-full h-auto block object-contain group-hover:scale-[1.01] transition-transform duration-300"/>
+              <div class="absolute inset-0 bg-ink/75 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
+                <span class="font-sora font-extrabold text-white text-base md:text-lg">Finger Motion Controlled Biomedical Wheelchair</span>
+                <span class="font-mono text-xs text-[#A3E635] mt-1 font-bold">DOI: 10.1109/ICAST55766.2022.10039595</span>
+                <span class="mt-3 btn-brutal bg-[#FFC700] text-ink font-sora font-bold text-xs md:text-sm px-4 py-2 rounded-xl flex items-center gap-2">Click to open on IEEE Xplore ↗</span>
+              </div>
+            </a>
+
+            <div class="mt-4 bg-black/25 border-2 border-white/20 rounded-2xl p-4 backdrop-blur">
+              <h4 class="font-sora font-bold text-sm md:text-base text-white">B.E. in Electronics & Telecommunication (CGPA: 8.21 / 10)</h4>
+              <p class="text-white/85 text-xs mt-0.5">Shah and Anchor Kutchhi Engineering College, Mumbai University (2019 – 2022)</p>
+              <p class="text-white/75 text-[11.5px] mt-0.5">Diploma in Electronics & Telecom (St. Xavier's Technical Institute, 76%)</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2.5 mt-4">
+            <a href="https://ieeexplore.ieee.org/document/10039595" target="_blank" class="bg-white text-ink border-[2px] border-ink rounded-xl py-2.5 px-2 text-center font-bold text-xs shadow-[3px_3px_0_#0F0F1A] hover:bg-yellow-100 transition truncate">📡 IEEE Xplore ↗</a>
+            <div class="bg-white text-ink border-[2px] border-ink rounded-xl py-2.5 px-2 text-center font-bold text-xs shadow-[3px_3px_0_#0F0F1A] text-center truncate">🏆 2nd Prize IEEE</div>
+            <div class="bg-white text-ink border-[2px] border-ink rounded-xl py-2.5 px-2 text-center font-bold text-xs shadow-[3px_3px_0_#0F0F1A] text-center truncate">📶 Hardware & IoT</div>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4 flex flex-col justify-between">
+        <div class="reveal card-brutal rounded-2xl p-5 flex gap-4 items-start bg-[#FFF1F7]"><div class="w-12 h-12 shrink-0 grad-bg rounded-xl border-2 border-ink flex items-center justify-center text-white text-xl"><i class="fa-brands fa-python"></i></div><div><h4 class="font-sora font-extrabold">Python Programming Certification</h4><p class="text-sm text-ink/60 font-medium">Advanced OOP, RESTful architectures & data pipelines</p><span class="text-xs font-mono font-bold bg-[#A3E635] border-2 border-ink rounded-full px-2 py-[2px]">VERIFIED ✓</span></div></div>
+        <div class="reveal card-brutal rounded-2xl p-5 flex gap-4 items-start bg-[#EFFCFF]"><div class="w-12 h-12 shrink-0 grad-bg3 rounded-xl border-2 border-ink flex items-center justify-center text-white text-xl"><i class="fa-solid fa-database"></i></div><div><h4 class="font-sora font-extrabold">MySQL & Relational DB Certification</h4><p class="text-sm text-ink/60 font-medium">Schema architecture, index tuning & performance query design</p><span class="text-xs font-mono font-bold bg-[#06B6D4] text-white border-2 border-ink rounded-full px-2 py-[2px]">VERIFIED ✓</span></div></div>
+        <div class="reveal card-brutal rounded-2xl p-5 flex gap-4 items-start bg-[#FFF8E1]"><div class="w-12 h-12 shrink-0 grad-bg4 rounded-xl border-2 border-ink flex items-center justify-center text-white text-xl"><i class="fa-solid fa-layer-group"></i></div><div><h4 class="font-sora font-extrabold">Frappe Framework & Bench Mastery</h4><p class="text-sm text-ink/60 font-medium">Custom doctypes, server scripts, hooks, scheduler & production deployment</p><span class="text-xs font-mono font-bold bg-[#FFC700] border-2 border-ink rounded-full px-2 py-[2px]">VERIFIED ✓</span></div></div>
+        <div class="reveal card-brutal rounded-2xl p-5 flex gap-4 items-start bg-[#EFFFEF]"><div class="w-12 h-12 shrink-0 bg-ink rounded-xl border-2 border-ink flex items-center justify-center text-[#A3E635] text-xl"><i class="fa-solid fa-shield-halved"></i></div><div><h4 class="font-sora font-extrabold">Docker & Production Linux Deployment</h4><p class="text-sm text-ink/60 font-medium">CI/CD pipelines, Nginx reverse proxy & automated database backups</p><span class="text-xs font-mono font-bold bg-ink text-white border-2 border-ink rounded-full px-2 py-[2px]">VERIFIED ✓</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative py-16 md:py-24 bg-ink text-white overflow-hidden">
+  <div class="blob w-[420px] h-[420px] bg-[#FF2E93] top-0 -left-20 opacity-40"></div>
+  <div class="blob w-[420px] h-[420px] bg-[#06B6D4] bottom-0 right-0 opacity-40"></div>
+  <div class="absolute inset-0 dot-grid-light opacity-15"></div>
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="reveal inline-block sticker bg-[#FF2E93] text-white font-mono font-bold text-xs px-4 py-1.5 rounded-full rotate-[-2deg]">07 • GET IN TOUCH 📞</span>
+      <h2 class="reveal font-sora font-extrabold text-4xl md:text-6xl mt-4 tracking-tight">Let's Automate <span class="grad-text">Your Business</span></h2>
+      <p class="reveal text-white/60 font-medium mt-3">Need a custom ERP, CRM, WhatsApp automation, or hardware integration? Connect directly — ready to deliver in weeks, not months.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-6 mt-10">
+      <div class="space-y-4">
+        <div class="reveal bg-white text-ink border-[3px] border-white rounded-3xl p-6 shadow-[7px_7px_0_#FF2E93] rotate-[-1deg]">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 grad-bg2 rounded-2xl border-[3px] border-ink flex items-center justify-center text-white text-2xl shrink-0"><i class="fa-solid fa-phone-volume"></i></div>
+            <div class="flex-1"><div class="font-mono text-xs font-bold text-ink/50">DIRECT PHONE / WHATSAPP</div><div class="font-sora font-extrabold text-xl">+91 98677 78229</div></div>
+            <button onclick="copyText('+919867778229','Phone number')" class="btn-brutal bg-[#FFC700] w-11 h-11 rounded-xl flex items-center justify-center shrink-0" title="Copy"><i class="fa-solid fa-copy"></i></button>
+          </div>
+          <div class="flex gap-2 mt-4"><a href="tel:+919867778229" class="flex-1 text-center btn-brutal bg-ink text-white font-bold text-sm py-2.5 rounded-xl"><i class="fa-solid fa-phone mr-1"></i> Call Now</a><a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20discuss%20an%20ERP%20project." target="_blank" class="flex-1 text-center btn-brutal bg-[#25D366] text-white font-bold text-sm py-2.5 rounded-xl"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</a></div>
+        </div>
+        <div class="reveal bg-white text-ink border-[3px] border-white rounded-3xl p-6 shadow-[7px_7px_0_#06B6D4] rotate-[1deg]">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 grad-bg rounded-2xl border-[3px] border-ink flex items-center justify-center text-white text-2xl shrink-0"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div class="flex-1 min-w-0"><div class="font-mono text-xs font-bold text-ink/50">DIRECT EMAIL • REPLIES FAST</div><div class="font-sora font-extrabold text-[17px] truncate">shyampandey1104@gmail.com</div></div>
+            <button onclick="copyText('shyampandey1104@gmail.com','Email ID')" class="btn-brutal bg-[#A3E635] w-11 h-11 rounded-xl flex items-center justify-center shrink-0" title="Copy Email"><i class="fa-solid fa-copy"></i></button>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <button onclick="openEmail()" class="flex-1 text-center btn-brutal grad-bg text-white font-bold text-sm py-2.5 rounded-xl flex items-center justify-center gap-2">
+              <i class="fa-solid fa-envelope"></i> Open Gmail / Compose
+            </button>
+            <button onclick="copyText('shyampandey1104@gmail.com','Email ID')" class="btn-brutal bg-[#FFC700] text-ink font-bold text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-1.5" title="Copy Email">
+              <i class="fa-solid fa-copy"></i> Copy
+            </button>
+          </div>
+        </div>
+        <div class="reveal bg-white text-ink border-[3px] border-white rounded-3xl p-6 shadow-[7px_7px_0_#A3E635] rotate-[-1deg]">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 bg-[#0A66C2] rounded-2xl border-[3px] border-ink flex items-center justify-center text-white text-2xl shrink-0"><i class="fa-brands fa-linkedin"></i></div>
+            <div class="flex-1 min-w-0"><div class="font-mono text-xs font-bold text-ink/50">LINKEDIN PROFILE</div><div class="font-sora font-extrabold text-[16px] truncate">/in/shyamkumarpandey</div></div>
+            <button onclick="copyText('https://linkedin.com/in/shyamkumarpandey','LinkedIn URL')" class="btn-brutal bg-[#0A66C2] text-white w-11 h-11 rounded-xl flex items-center justify-center shrink-0"><i class="fa-solid fa-copy"></i></button>
+          </div>
+          <a href="https://linkedin.com/in/shyamkumarpandey" target="_blank" class="mt-4 flex text-center justify-center btn-brutal bg-[#0A66C2] text-white font-bold text-sm py-2.5 rounded-xl"><i class="fa-brands fa-linkedin mr-2 text-lg"></i> Connect on LinkedIn →</a>
+        </div>
+        <div class="reveal grad-bg4 border-[3px] border-white rounded-3xl p-5 shadow-[7px_7px_0_rgba(255,255,255,.9)] flex items-center gap-4">
+          <div class="text-4xl">📍</div>
+          <div><div class="font-sora font-extrabold text-lg text-ink">Mumbai, India</div><div class="text-ink/90 text-sm font-semibold">Available for On-site (Mumbai) & Global Remote ERP Implementations 🌍</div></div>
+        </div>
+      </div>
+
+      <div class="reveal bg-white text-ink border-[3px] border-white rounded-[28px] p-7 md:p-9 shadow-[10px_10px_0_#7C3AED] relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-3 grad-bg"></div>
+        <h3 class="font-sora font-extrabold text-2xl md:text-3xl">Request a Live Demo / Quote 👇</h3>
+        <p class="text-sm text-ink/60 font-medium mt-1">Fill this quick form and I will get back within a few hours.</p>
+        <form id="contactForm" class="mt-6 space-y-4" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div><label class="font-bold text-sm">Your Name *</label><input id="fName" type="text" placeholder="e.g. Rajesh Shah" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-4 focus:ring-[#FF2E93]/30 focus:border-[#FF2E93] transition bg-cream"/></div>
+            <div><label class="font-bold text-sm">Phone / WhatsApp *</label><input id="fPhone" type="text" placeholder="+91 98XXX XXXXX" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-4 focus:ring-[#7C3AED]/30 focus:border-[#7C3AED] transition bg-cream"/></div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div><label class="font-bold text-sm">Email Address <span class="text-ink/60 font-normal text-xs">(For Demo Confirmation)</span></label><input id="fEmail" type="email" placeholder="e.g. rajesh@company.com" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-4 focus:ring-[#06B6D4]/30 focus:border-[#06B6D4] transition bg-cream"/></div>
+            <div><label class="font-bold text-sm">Solution Needed</label>
+              <select id="fType" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium bg-cream focus:outline-none">
+                <optgroup label="⭐ Flagship Industry Suites">
+                  <option value="School & Educational Institute ERP">🏫 School & Institute Management ERP</option>
+                  <option value="Real Estate CRM & Telephony">🏢 Real Estate CRM & Telephony</option>
+                  <option value="Jewelry Manufacturing & Karigar MS">💎 Jewelry Manufacturing & Bullion MS</option>
+                  <option value="Solar & EPC Infrastructure ERP">☀️ Solar & EPC Infrastructure ERP</option>
+                  <option value="Healthcare & Hospital ERP">🏥 Healthcare & Clinic ERP</option>
+                  <option value="NGO & Association ERP">🤝 NGO & Non-Profit ERP</option>
+                </optgroup>
+                <optgroup label="⚙️ Core ERPNext Enterprise Modules">
+                  <option value="Manufacturing & BOM / MRP">🏭 Manufacturing, BOM & Work Orders</option>
+                  <option value="HRMS, Payroll & Biometric Attendance">👥 HRMS, Payroll & Attendance</option>
+                  <option value="Accounting, Finance & GST E-Invoicing">📊 Accounting & GST / E-Invoicing</option>
+                  <option value="Inventory & Multi-Warehouse (WMS)">📦 Inventory & Warehouse (WMS)</option>
+                  <option value="Selling & Sales Pipeline CRM">📈 Selling & Sales Pipeline CRM</option>
+                  <option value="Buying & Procurement Management">🛒 Buying & Procurement</option>
+                  <option value="Retail & Point of Sale (POS)">💳 Retail & POS (Point of Sale)</option>
+                  <option value="Project Management & Timesheets">⏱️ Projects & Timesheet Tracking</option>
+                  <option value="Asset Management & Maintenance">🛠️ Asset Management & Maintenance</option>
+                  <option value="Quality Inspection & Control">🔍 Quality Inspection & Control</option>
+                  <option value="Helpdesk & SLA Customer Support">🎧 Helpdesk & Ticket Support</option>
+                </optgroup>
+                <optgroup label="⚡ Integrations & Custom Engineering">
+                  <option value="WhatsApp Cloud API Automation">💬 WhatsApp Cloud API & Bot Automation</option>
+                  <option value="Biometric, RFID & IoT Hardware Sync">🏷️ Biometric, RFID & IoT Hardware Sync</option>
+                  <option value="Telephony (Exotel / Twilio)">📞 Telephony (Exotel / Twilio Calling)</option>
+                  <option value="Payment Gateway (Razorpay / Stripe)">💳 Payment Gateway & Bank Reconcile</option>
+                  <option value="Aadhaar / PAN KYC Automation">🆔 Aadhaar & PAN KYC Verification</option>
+                  <option value="Custom Frappe App & Cloud Migration">🚀 Custom Frappe App & Migration</option>
+                  <option value="Other Custom Requirement">✨ Other Custom ERP Requirement</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div><label class="font-bold text-sm">Timeline</label><select id="fTimeline" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium bg-cream focus:outline-none"><option>Immediate (Within 1-2 weeks)</option><option>Within 1 Month</option><option>Exploring Options</option></select></div>
+          <div><label class="font-bold text-sm">Tell me about your business workflow <span class="text-ink/40 font-normal text-xs">(Optional)</span></label><textarea id="fMsg" rows="4" placeholder="e.g. We have 3 branches / 50 workers and want to automate attendance and WhatsApp notifications (Optional)..." class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-4 focus:ring-[#06B6D4]/30 focus:border-[#06B6D4] transition bg-cream resize-none"></textarea></div>
+          <button type="submit" id="sendBtn" class="w-full btn-brutal grad-bg text-white font-sora font-extrabold text-lg py-4 rounded-2xl flex items-center justify-center gap-2"><span id="sendLabel">Send Request & Book Demo 🚀</span></button>
+          <p class="text-center text-xs text-ink/50 font-medium">🔒 100% Confidential. Directly delivered to Shyam's inbox & WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#0B0B16] text-white border-t-[3px] border-[#FF2E93] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-12 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="flex items-center gap-3"><div class="w-12 h-12 grad-bg border-[3px] border-white rounded-xl flex items-center justify-center font-sora font-extrabold text-xl rotate-[-6deg]">SP</div><div><div class="font-sora font-extrabold">SHYAMKUMAR B. PANDEY</div><div class="text-xs font-mono text-white/50">Senior ERPNext Developer • Python Specialist</div></div></div>
+      <p class="text-white/50 text-sm font-medium mt-4 max-w-xs">Building scalable, automated ERP engines from Mumbai to the world. Frappe-powered, hardware-integrated, business-first.</p>
+      <div class="flex gap-2 mt-4">
+        <a href="https://linkedin.com/in/shyamkumarpandey" target="_blank" class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-[#0A66C2] transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <button onclick="openEmail()" class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-[#FF2E93] transition cursor-pointer" title="Send Email"><i class="fa-solid fa-envelope"></i></button>
+        <a href="https://wa.me/919867778229" target="_blank" class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:+919867778229" class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-[#A3E635] hover:text-ink transition" title="Call Now"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="font-medium text-sm">
+      <div class="font-sora font-extrabold mb-3 text-[#FFC700]">QUICK NAVIGATION</div>
+      <div class="grid grid-cols-2 gap-2 text-white/70">
+        <a href="#about" class="hover:text-white">→ About</a>
+        <a href="#solutions" class="hover:text-white">→ Solutions</a>
+        <a href="#projects" class="hover:text-white">→ 15+ Projects</a>
+        <a href="#skills" class="hover:text-white">→ Tech Stack</a>
+        <a href="#experience" class="hover:text-white">→ Experience</a>
+        <a href="#contact" class="hover:text-white">→ Contact</a>
+      </div>
+    </div>
+    <div>
+      <div class="font-sora font-extrabold mb-3 text-[#A3E635]">LET'S CONNECT ⚡</div>
+      <div class="space-y-2 text-sm font-medium text-white/70">
+        <div class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">📞 +91 98677 78229</div>
+        <div onclick="openEmail()" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 hover:border-[#FF2E93] hover:text-white cursor-pointer transition flex items-center justify-between"><span>✉️ shyampandey1104@gmail.com</span><span class="text-xs bg-white/10 px-2 py-0.5 rounded">Compose ↗</span></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">📍 Mumbai, Maharashtra, India</div>
+      </div>
+      <button onclick="burstConfetti()" class="mt-4 w-full bg-white/10 border-2 border-dashed border-white/30 rounded-xl py-2.5 font-bold text-sm hover:bg-white hover:text-ink transition">🎊 Click for confetti!</button>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs font-mono text-white/40 px-4">© 2026 Shyamkumar Bhupendra Pandey • Crafted with 💖 in Mumbai • Frappe • ERPNext • Python</div>
+</footer>
+
+<!-- FLOATING TO-TOP -->
+<button id="toTop" class="fixed bottom-24 right-4 md:right-6 z-[8000] w-12 h-12 btn-brutal grad-bg text-white rounded-2xl hidden items-center justify-center text-lg"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- CHATBOT -->
+<div class="fixed bottom-4 right-4 md:right-6 z-[8500] flex flex-col items-end gap-3">
+  <div id="chatPanel" class="hidden w-[320px] sm:w-[360px] bg-cream border-[3px] border-ink rounded-3xl shadow-brutalLg overflow-hidden">
+    <div class="grad-bg px-4 py-3 flex items-center gap-3 text-white">
+      <div class="w-10 h-10 bg-white border-2 border-ink rounded-xl flex items-center justify-center text-xl">🤖</div>
+      <div class="flex-1"><div class="font-sora font-extrabold text-sm">ShyamBot AI</div><div class="text-[11px] font-mono opacity-90 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-[#A3E635] rounded-full animate-pulse"></span> online • ERPNext Assistant</div></div>
+      <button onclick="toggleChat(false)" class="w-8 h-8 bg-black/30 rounded-lg hover:bg-black/50"><i class="fa-solid fa-xmark text-sm"></i></button>
+    </div>
+    <div id="chatBody" class="h-[340px] sm:h-[380px] overflow-y-auto p-3 space-y-2.5 text-[13.5px] font-medium"></div>
+    <div class="p-3 border-t-[3px] border-ink bg-white flex gap-2">
+      <input id="chatInput" type="text" placeholder="Ask about School ERP, Real Estate CRM..." class="flex-1 border-2 border-ink rounded-xl px-3 py-2 text-sm font-medium focus:outline-none bg-cream"/>
+      <button onclick="sendChat()" class="btn-brutal grad-bg text-white w-10 h-10 rounded-xl shrink-0"><i class="fa-solid fa-paper-plane text-sm"></i></button>
+    </div>
+  </div>
+  <button onclick="toggleChat()" class="magnetic btn-brutal grad-bg2 text-white pl-4 pr-5 py-3 rounded-full font-sora font-bold text-sm flex items-center gap-2 shadow-glowPink"><span class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-lg border-2 border-ink">🤖</span> Chat with ShyamBot <span class="w-2.5 h-2.5 bg-[#A3E635] rounded-full border border-ink animate-pulse"></span></button>
+</div>
+
+<!-- BOOK DEMO MODAL -->
+<div id="demoModal" class="fixed inset-0 z-[9550] hidden items-center justify-center p-4 modal-bg" onclick="if(event.target===this) closeDemoModal()">
+  <div class="bg-white border-[3.5px] border-ink rounded-[28px] shadow-brutalLg max-w-lg w-full p-6 md:p-8 relative transform transition-all">
+    <button onclick="closeDemoModal()" class="absolute top-4 right-4 w-9 h-9 bg-ink text-white rounded-full flex items-center justify-center hover:bg-[#FF2E93] transition"><i class="fa-solid fa-xmark text-lg"></i></button>
+    <div class="flex items-center gap-3.5">
+      <div class="w-13 h-13 p-3 grad-bg border-[2.5px] border-ink rounded-2xl flex items-center justify-center text-2xl text-white shadow-brutalSm">🚀</div>
+      <div>
+        <h3 class="font-sora font-extrabold text-2xl text-ink leading-tight">Book a Live ERP Demo</h3>
+        <p class="text-xs font-mono text-ink/60 font-bold">1-on-1 Personalized Walkthrough • Shyamkumar Pandey</p>
+      </div>
+    </div>
+    
+    <p class="text-sm text-ink/75 font-medium mt-4 leading-relaxed">
+      Choose how you would like to connect for a live demo of <b>School ERP, Real Estate CRM, Jewelry MS, or Custom ERPNext</b>:
+    </p>
+
+    <div class="space-y-3 mt-5">
+      <!-- 1. WhatsApp Direct -->
+      <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20book%20a%20live%20demo%20of%20your%20ERP/CRM%20solutions." target="_blank" onclick="closeDemoModal()" class="w-full btn-brutal bg-[#25D366] text-white p-4 rounded-2xl flex items-center gap-4 group hover:brightness-105 transition">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="text-left flex-1 min-w-0">
+          <div class="font-sora font-extrabold text-[15px]">Instant WhatsApp Chat ⚡</div>
+          <div class="text-xs text-white/90 font-medium truncate">Fastest reply • +91 98677 78229</div>
+        </div>
+        <i class="fa-solid fa-arrow-right text-base group-hover:translate-x-1 transition"></i>
+      </a>
+
+      <!-- 2. Direct Email / Gmail -->
+      <button onclick="closeDemoModal(); openEmail();" class="w-full btn-brutal grad-bg text-white p-4 rounded-2xl flex items-center gap-4 group hover:brightness-105 transition text-left">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-solid fa-envelope"></i></div>
+        <div class="text-left flex-1 min-w-0">
+          <div class="font-sora font-extrabold text-[15px]">Send Email / Gmail Composer ✉️</div>
+          <div class="text-xs text-white/90 font-medium truncate">shyampandey1104@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-arrow-right text-base group-hover:translate-x-1 transition"></i>
+      </button>
+
+      <!-- 3. Fill 30-Sec Form -->
+      <button onclick="scrollToContactForm()" class="w-full btn-brutal bg-[#FFF8EC] border-[2.5px] border-ink text-ink p-4 rounded-2xl flex items-center gap-4 group hover:bg-[#FFC700] transition text-left">
+        <div class="w-12 h-12 bg-ink text-white rounded-xl flex items-center justify-center text-xl shrink-0">📝</div>
+        <div class="text-left flex-1 min-w-0">
+          <div class="font-sora font-extrabold text-[15px]">Request Quote & Demo Form 📋</div>
+          <div class="text-xs text-ink/70 font-medium truncate">Auto-logs to Sheet & sends alert</div>
+        </div>
+        <i class="fa-solid fa-arrow-down text-base group-hover:translate-y-1 transition"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT MODAL -->
+<div id="projModal" class="fixed inset-0 z-[9500] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-white border-[3px] border-ink rounded-[24px] shadow-brutalLg max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+    <div id="projModalContent"></div>
+  </div>
+</div>
+
+<!-- TOASTS -->
+<div id="toasts" class="fixed bottom-6 left-4 md:left-6 z-[9600] space-y-2 max-w-[320px]"></div>
+
+<script>
+/* ============ DATA: 16 RICH PROJECTS (ACCURATE TO RESUME) ============ */
+const PROJECTS = [
+  {
+    title:'CRM Platform – Real Estate Sales',
+    cat:'crm',
+    metric:'496+ Active Leads • Hot/Cold Pipeline',
+    img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#FF6B00,#FF2E93)',
+    tags:['ERPNext','Frappe','Exotel Telephony','WhatsApp API','Payment Gateway'],
+    short:'Full CRM on ERPNext/Frappe managing 496+ leads with Hot/Cold/Warm pipelines, admin KPI dashboard, Exotel click-to-call & automated follow-ups.',
+    challenge:'Leads leaked across Excel sheets and telecallers, zero follow-up tracking, delayed booking advance payments.',
+    solution:'Built complete sales CRM pipeline, integrated Exotel for click-to-call & auto call logging, WhatsApp API for automated customer follow-ups, and Payment Gateway for instant advance token collection.',
+    results:['496+ real estate leads managed seamlessly','Zero missed lead follow-ups with automated WhatsApp alerts','Instant booking token collection via payment gateway']
+  },
+  {
+    title:'School & Institute Management SaaS ERP',
+    cat:'school',
+    metric:'Multi-Branch + WhatsApp Alerts',
+    img:'./School_ERP_LinkedIn_Showcase.jpg',
+    grad:'linear-gradient(135deg,#FF2E93,#7C3AED)',
+    tags:['Frappe','ERPNext','Biometric & RFID','WhatsApp API','Payment Gateway'],
+    short:'Multi-tenant educational ERP with batchwise attendance, pre/post exam improvement analytics, online fee portal & instant WhatsApp parent alerts.',
+    challenge:'Multi-branch attendance registers, delayed fee follow-ups, and lack of visual learning improvement analytics for students and teachers.',
+    solution:'Engineered unified Frappe ERP connecting Biometric/RFID hardware for automatic attendance, WhatsApp Business API for fee/attendance alerts, and dynamic Pre vs Post-Test performance reports.',
+    results:['Zero manual register entries across 1,500+ students','Fee collection turnaround cut by 65%','Daily WhatsApp attendance notifications to 100% parents']
+  },
+  {
+    title:'Sejal Jewels – Jewelry Manufacturing ERP',
+    cat:'mfg',
+    metric:'Zero Gold Wastage Leakage',
+    img:'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#FFC700,#FF6B00)',
+    tags:['Frappe','ERPNext','RFID','Biometric','Barcode','Manufacturing'],
+    short:'End-to-end jewelry manufacturing ERP: custom DocTypes (Kariger, Material, Warehouse, Stock Transfer), RFID shop-floor sync & biometric attendance.',
+    challenge:'Manual paper job-cards, untracked metal loss during melting/polishing, and security risks in high-value gold inventory.',
+    solution:'Engineered custom Frappe doctypes for Karigar ledger & purity conversion, RFID readers for real-time shop-floor stock sync, barcode tracking, and biometric attendance linked to payroll.',
+    results:['Complete visibility of worker-wise metal balances','Shop-floor inventory sync time cut from hours to seconds','100% accurate karigar wage calculation']
+  },
+  {
+    title:'Samwadini – NGO Management System',
+    cat:'crm',
+    metric:'10k+ Lives Tracked • 10+ Custom Reports',
+    img:'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#06B6D4,#7C3AED)',
+    tags:['ERPNext Social','Education NIIT','Women Empowerment','HRMS','Reports'],
+    short:'Comprehensive NGO platform: Education (student profiles, NIIT tracking, batch management), Women Empowerment (legal cases), HRMS & 10+ analytics reports.',
+    challenge:'Paper case records for social beneficiaries, lack of progress tracking across branches, and manual report preparation for trustees.',
+    solution:'Developed unified platform on Frappe/ERPNext with student lifecycle, legal case timeline tracking, integrated HRMS, and 10+ custom Query Reports (branch, batch, subject-wise).',
+    results:['10,000+ beneficiaries and students digitized','10+ automated analytical reports for operational insights','100% audit-ready documentation']
+  },
+  {
+    title:'GIS Portal – Infrastructure Project Tracker',
+    cat:'crm',
+    metric:'Live Geo-Map Layers & Workflows',
+    img:'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#06B6D4,#A3E635)',
+    tags:['JavaScript','ERPNext','GIS / Map APIs','Workflow Engine'],
+    short:'Internal GIS portal for infrastructure project tracking with live interactive map layers for Road, Drainage, and Water Pipeline construction.',
+    challenge:'Engineers and contractors lacked real-time spatial visibility of ongoing civic infrastructure projects across geographical zones.',
+    solution:'Built GIS portal on ERPNext with interactive map layers, automatic geo-data calculation, role-based access, and strict approval workflows (Draft → Under Review → Approved → Rejected).',
+    results:['Real-time spatial tracking of civic pipeline & road works','Automated approval workflows preventing unauthorized project phase progression']
+  },
+  {
+    title:'Finest Coating – Business Website & Lead Engine',
+    cat:'integ',
+    metric:'100% SEO & WhatsApp Direct Connect',
+    img:'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#FF2E93,#FFC700)',
+    tags:['HTML5','CSS3','JavaScript','WhatsApp API','SEO'],
+    short:'Multi-page responsive website (Home, Services, Gallery, FAQ, Warranty, Reviews) for premium bath solutions with automated WhatsApp lead capture.',
+    challenge:'Client needed high-converting digital presence to showcase luxury bathroom finishes and capture direct client inquiries without friction.',
+    solution:'Designed and developed fully responsive, SEO-optimized business website with interactive service selector and instant WhatsApp API customer connect.',
+    results:['3x increase in direct online customer inquiries via WhatsApp','Mobile responsive load time under 1.5 seconds']
+  },
+  {
+    title:'Identity Verification API – KYC Inside ERP',
+    cat:'integ',
+    metric:'Instant Aadhaar / PAN / Voter ID',
+    img:'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#7C3AED,#06B6D4)',
+    tags:['Python','REST APIs','ERPNext','Aadhaar OTP','PAN NSDL'],
+    short:'Plug-and-play REST API integration connecting Aadhaar, PAN, and Voter ID verification directly into ERPNext for seamless client KYC.',
+    challenge:'Manual ID verification caused delays in customer onboarding and created risks of fraudulent identity submissions.',
+    solution:'Built unified KYC microservice in Python integrating official identity verification APIs into ERPNext customer doctypes.',
+    results:['Instant customer verification in under 30 seconds','Reusable plug-and-play API deployed across multiple ERP client instances']
+  },
+  {
+    title:'HRMS Portal – HR & Payroll Automation',
+    cat:'erp',
+    metric:'Biometric Sync • 100% Tax Compliance',
+    img:'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#FF2E93,#FF6B00)',
+    tags:['Frappe','ERPNext HRMS','Python','Biometric Sync','Statutory Tax'],
+    short:'End-to-end HRMS: Leave Management, Attendance, Recruitment, Lifecycle, Appraisals, and Payroll (Salary Structures, Tax, Statutory Compliance).',
+    challenge:'Scattered attendance across punch cards, manual leave calculations, and payroll errors during tax deductions.',
+    solution:'Customized Frappe HRMS with custom biometric device sync, automated salary structures, PF/ESI/TDS tax deductions, and self-service leave portals.',
+    results:['Payroll processing time reduced from days to under 2 hours','Zero salary calculation errors across multi-client deployments']
+  },
+  {
+    title:'Biomedical Smart Wheelchair (IEEE Published)',
+    cat:'integ',
+    metric:'IEEE Published 2022 • 2nd Prize',
+    img:'./ieee_paper.png',
+    grad:'linear-gradient(135deg,#0F0F1A,#06B6D4)',
+    tags:['Embedded Systems','Python','Signal Processing','IEEE Xplore'],
+    short:'Assistive technology enabling wheelchair motion control via finger gesture detection using embedded sensors and digital signal processing.',
+    challenge:'Motor-impaired individuals needing non-invasive, intuitive assistive mobility solutions.',
+    solution:'Designed finger motion detection hardware and signal processing algorithms, interfacing embedded sensors with motor controllers.',
+    results:['Published on IEEE Xplore (2022)','Awarded 2nd Prize at IEEE Technical Project Competition']
+  },
+  {
+    title:'Multi-Store E-Commerce & Inventory Hub',
+    cat:'integ',
+    metric:'+40% Data Flow Speed',
+    img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#06B6D4,#A3E635)',
+    tags:['Shopify API','WooCommerce','Razorpay','Webhooks'],
+    short:'Real-time 2-way sync connecting Shopify, WooCommerce, Razorpay and ERPNext for orders, inventory, payments and auto-invoicing.',
+    challenge:'Overselling stock, manual order punching across 3 stores, and delayed payment reconciliation.',
+    solution:'Webhook-driven order ingestion with idempotency & retry queues, bi-directional stock sync every 5 minutes, and auto Razorpay payout matching.',
+    results:['Data flow speed boosted by 40%','Zero overselling incidents in 12+ months']
+  },
+  {
+    title:'Tally Prime ⇄ ERPNext Real-Time Sync Bridge',
+    cat:'integ',
+    metric:'Zero Manual Ledger Entry',
+    img:'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#FF6B00,#A3E635)',
+    tags:['Tally XML API','ERPNext Accounts','GST Invoicing','Sync Engine'],
+    short:'Two-way bridge allowing operations teams to work on ERPNext while accounts automatically syncs vouchers & ledgers to Tally Prime.',
+    challenge:'Accountants refused to leave Tally while sales team needed ERPNext, causing double entry work.',
+    solution:'Automated background daemon converting ERPNext Sales Invoices and Purchase Bills into Tally XML vouchers with error logs.',
+    results:['Eliminated 25 hours/week of accountant manual data re-entry','100% matched GST balances between Tally and ERPNext']
+  },
+  {
+    title:'WhatsApp Automated Customer Support & Billing Bot',
+    cat:'integ',
+    metric:'80% Queries Resolved on WhatsApp',
+    img:'https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#25D366,#06B6D4)',
+    tags:['WhatsApp Cloud API','Frappe Webhooks','PDF Generation','Support Bot'],
+    short:'Interactive WhatsApp chatbot allowing clients to request PDF invoices, track order status, and raise support tickets 24/7.',
+    challenge:'Support team overwhelmed by repetitive questions like "Send invoice PDF" or "Where is my dispatch?".',
+    solution:'Configured automated WhatsApp webhook responder connected to ERPNext database for real-time PDF generation and instant document dispatch.',
+    results:['80% routine queries handled without human intervention','Instant invoice download in under 3 seconds on WhatsApp']
+  },
+  {
+    title:'Pharmaceutical Batch Expiry & QC Inspection ERP',
+    cat:'mfg',
+    metric:'100% Batch Traceability',
+    img:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#06B6D4,#FF2E93)',
+    tags:['ERPNext Pharma','Batch & Expiry','FEFO Valuation','COA Generator'],
+    short:'Pharma manufacturing suite with Certificate of Analysis (COA) generation, mandatory QC checkpoints, and FEFO inventory dispatch.',
+    challenge:'Risk of dispatching near-expiry batches and paper-based lab test approvals violating regulatory standards.',
+    solution:'Automated First-Expiry-First-Out (FEFO) warehouse picking rules with mandatory QC sign-off before invoice approval.',
+    results:['Zero expired stock dispatches','Automated digital COA attachments with every invoice']
+  },
+  {
+    title:'Logistics & Fleet Dispatch Control Tower',
+    cat:'erp',
+    metric:'25% Fuel Cost Saved',
+    img:'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#0F0F1A,#FF2E93)',
+    tags:['GPS Tracking','Trip Sheets','e-POD Signature','Freight Billing'],
+    short:'Dispatch management system with real-time GPS pings, electronic Proof of Delivery (e-POD), and automated transporter freight calculation.',
+    challenge:'Delayed trip settlements, missing paper POD copies, and disputed freight bills with external transporters.',
+    solution:'Integrated driver mobile portal for customer signature and photo capture on delivery, automatically creating billing ledgers in accounts.',
+    results:['POD turnaround reduced from 7 days to instant','Freight billing disputes down by 70%']
+  },
+  {
+    title:'Retail POS & Multi-Outlet Inventory Sync',
+    cat:'erp',
+    metric:'Offline-First Billing',
+    img:'https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80&auto=format&fit=crop',
+    grad:'linear-gradient(135deg,#A3E635,#06B6D4)',
+    tags:['Frappe POS','Multi-Outlet','GST e-Invoice','Barcode Scanner'],
+    short:'High-speed retail billing system with offline operation capability, barcode scanning, loyalty points, and automated central warehouse replenishment.',
+    challenge:'Billing counters stopped during internet outages, and inventory between 4 retail outlets was always mismatched.',
+    solution:'Deployed offline IndexedDB POS caching with background cloud sync, integrated thermal printing, and auto-generated stock transfer requests.',
+    results:['Zero checkout downtime during internet drops','3x faster billing line turnaround during peak hours']
+  },
+  {
+    title:'Solar & EPC Infrastructure Project ERP',
+    cat:'erp',
+    metric:'Milestone Billing on Time',
+    img:'./solar_epc_erp.jpg',
+    grad:'linear-gradient(135deg,#FFC700,#06B6D4)',
+    tags:['EPC Projects','BOQ Estimation','Contractor Payouts','Milestone Invoices'],
+    short:'Project management and costing engine for solar and infrastructure contractors: BOQ estimation, site progress photos, and milestone billing.',
+    challenge:'Project cost overruns due to untracked contractor extra-item work and delayed client milestone billing.',
+    solution:'Linked project task Gantt charts with procurement purchase orders, ensuring materials are billed against approved site milestones.',
+    results:['Project budget variances reduced by 85%','Client invoice release speed doubled']
+  }
+];
+
+/* ============ SKILLS DATA ============ */
+const SKILLS = [
+  {name:'Frappe Framework & Bench', cat:'erp', level:96, yrs:'4+ yrs', icon:'fa-solid fa-bolt', color:'#FF2E93', desc:'Doctypes, Server/Client Scripts, Hooks, Bench CLI, Multi-tenant Deployment.'},
+  {name:'ERPNext Customization', cat:'erp', level:95, yrs:'4+ yrs', icon:'fa-solid fa-layer-group', color:'#7C3AED', desc:'Selling, Buying, HRMS, Payroll, Manufacturing (BOM), Stock, Accounts (GL/AP/AR), Projects.'},
+  {name:'Python, REST & GraphQL APIs', cat:'backend', level:95, yrs:'4+ yrs', icon:'fa-brands fa-python', color:'#3776AB', desc:'Backend logic, API webhooks, background tasks, automation pipelines.'},
+  {name:'WhatsApp Business Cloud API', cat:'hardware', level:94, yrs:'3+ yrs', icon:'fa-brands fa-whatsapp', color:'#25D366', desc:'Triggered alerts for POs, invoices, job cards & interactive support bots.'},
+  {name:'Exotel & Twilio Telephony', cat:'hardware', level:92, yrs:'3 yrs', icon:'fa-solid fa-headset', color:'#FF6B00', desc:'Click-to-call, auto call logging, IVR triggers embedded directly in ERP.'},
+  {name:'RFID, Biometric & ZPL Printing', cat:'hardware', level:93, yrs:'3+ yrs', icon:'fa-solid fa-fingerprint', color:'#06B6D4', desc:'Hardware integration with ERP for inventory, attendance & raw barcode printing.'},
+  {name:'Govt KYC (Aadhaar, PAN, Voter ID)', cat:'hardware', level:90, yrs:'2+ yrs', icon:'fa-solid fa-id-card', color:'#A3E635', desc:'Instant Aadhaar OTP, PAN NSDL, and Voter ID API authentication inside ERP.'},
+  {name:'MySQL, MariaDB, PostgreSQL', cat:'backend', level:92, yrs:'4 yrs', icon:'fa-solid fa-database', color:'#00758F', desc:'Query tuning, index design, custom reports, 35% faster execution.'},
+  {name:'JavaScript, HTML5, CSS & Jinja', cat:'backend', level:90, yrs:'4 yrs', icon:'fa-brands fa-js', color:'#F7DF1E', desc:'Interactive forms, client scripts, custom web portals & print format engines.'},
+  {name:'Payment Gateways (Razorpay)', cat:'hardware', level:92, yrs:'3+ yrs', icon:'fa-solid fa-credit-card', color:'#0C2340', desc:'Online fee collection, payment links, automated invoice reconciliation.'},
+  {name:'Docker, Nginx & Linux Servers', cat:'infra', level:88, yrs:'3+ yrs', icon:'fa-brands fa-docker', color:'#2496ED', desc:'Ubuntu server management, Nginx, Supervisor, SSL, automated CI/CD pipelines.'},
+  {name:'Git, GitHub, GitLab & Postman', cat:'infra', level:92, yrs:'4 yrs', icon:'fa-brands fa-git-alt', color:'#F05032', desc:'Version control, API test suites, automated testing & continuous delivery.'},
+];
+
+/* ============ EXPERIENCE DATA (ACCURATE TO RESUME) ============ */
+const EXPERIENCE = [
+  {
+    role:'Team Lead',
+    company:'Panorama Solutions',
+    loc:'Mumbai, Maharashtra • Remote',
+    period:'January 2026 — Present',
+    tag:'CURRENT',
+    tagColor:'#A3E635',
+    logo:'P',
+    logoBg:'linear-gradient(135deg,#FF2E93,#7C3AED)',
+    points:[
+      'Leading ERPNext & Frappe-based enterprise solutions across NGO, GIS, HRMS, and LPC platforms.',
+      'Managing end-to-end development including architecture, API integrations, DevOps, deployment, and team coordination.',
+      'Worked on major projects including Samwadini, Samwadini Women, QGIS Portal, and LPC systems with custom workflows, reports, and automation.',
+      'Handling server management, Docker, Linux deployment, CI/CD pipelines, and production support.',
+      'Mentoring and training 6+ interns in ERPNext, Frappe Framework, Python, JavaScript, and DevOps.'
+    ],
+    tech:['ERPNext','Python','Frappe Framework','Docker','DevOps','Team Leadership']
+  },
+  {
+    role:'Senior Python Developer',
+    company:'8848 Digital LLP',
+    loc:'Mumbai, India',
+    period:'September 2023 — December 2025',
+    tag:'SENIOR DEV',
+    tagColor:'#FFC700',
+    logo:'8',
+    logoBg:'linear-gradient(135deg,#FF6B00,#FF2E93)',
+    points:[
+      'Architected custom ERPNext solutions for jewelry, e-commerce, and retail sectors; built RESTful and GraphQL APIs improving cross-platform data flow by 40%.',
+      'Designed and implemented a WhatsApp Business API integration from scratch across manufacturing, NGO, and HR payroll clients — automating transactional alerts for POs, invoices, and job cards.',
+      'Built a full Exotel telephony integration enabling click-to-call, call logging, and IVR triggers embedded directly inside ERPNext.',
+      'Developed Payment Gateway integration via REST APIs, enabling online collections and automated invoice reconciliation.',
+      'Engineered real-time RFID and biometric integrations in Python, syncing shop-floor inventory, asset tracking, and attendance into ERPNext.'
+    ],
+    tech:['Frappe','ERPNext','Python','GraphQL','WhatsApp API','Exotel','RFID','Biometric']
+  },
+  {
+    role:'Python Developer',
+    company:'8848 Digital LLP',
+    loc:'Mumbai, India',
+    period:'July 2022 — September 2023',
+    tag:'BACKEND DEV',
+    tagColor:'#06B6D4',
+    logo:'8',
+    logoBg:'linear-gradient(135deg,#06B6D4,#7C3AED)',
+    points:[
+      'Built scalable backend systems handling 10,000+ daily transactions; automated business processes saving 30+ hours/week of manual effort.',
+      'Integrated third-party services including payment gateways and identity verification APIs (Aadhaar, PAN, Voter ID) for KYC onboarding.',
+      'Integrated Twilio SMS/voice APIs to automate donor communication workflows for NGO clients, reducing manual outreach.',
+      'Performed database optimization (query tuning, index design) on MySQL/PostgreSQL/MariaDB to improve report performance.'
+    ],
+    tech:['Python','REST APIs','Aadhaar/PAN KYC','Twilio','MariaDB','MySQL']
+  },
+  {
+    role:'Engineering Intern',
+    company:'Western Railway (Mumbai Central)',
+    loc:'Mumbai, India',
+    period:'December 2019 — January 2020',
+    tag:'INTERNSHIP',
+    tagColor:'#fff',
+    logo:'W',
+    logoBg:'linear-gradient(135deg,#0F0F1A,#7C3AED)',
+    points:[
+      'Studied and documented electronic signaling and telecommunication systems on the Mumbai suburban rail network.'
+    ],
+    tech:['Electronics','Telecommunications','Signaling Systems']
+  }
+];
+
+/* ============ PRELOADER & MARQUEE ============ */
+window.addEventListener('load', ()=> setTimeout(()=> document.getElementById('preloader').classList.add('hide'), 800));
+setTimeout(()=> document.getElementById('preloader').classList.add('hide'), 3000);
+
+const m1 = ['⚡ CUSTOM ERPNEXT','🏫 SCHOOL ERP','🏢 REAL ESTATE CRM','💎 JEWELRY MS','💬 WHATSAPP API','🏷️ BIOMETRIC & RFID','🆔 AADHAAR/PAN KYC','📞 EXOTEL CALLING','🐍 PYTHON & FRAPPE'];
+const m2 = ['★ 15+ PROJECTS DELIVERED','★ IEEE PUBLISHED RESEARCHER','★ 40% FASTER WORKFLOWS','★ 30+ HRS/WK AUTOMATED','★ MUMBAI, INDIA','★ AVAILABLE FOR DEMOS'];
+document.getElementById('marquee1').innerHTML = [...m1,...m1].map(t=>`<span class="px-6 whitespace-nowrap">${t} <span class="text-[#FFC700] ml-6">✦</span></span>`).join('');
+document.getElementById('marquee2').innerHTML = [...m2,...m2].map(t=>`<span class="px-6 whitespace-nowrap">${t}</span>`).join('');
+
+/* ============ TYPEWRITER ============ */
+const roles = ['School ERP Platforms 🏫','Real Estate CRM Engines 🏢','Jewelry Manufacturing MS 💎','WhatsApp & Hardware Integrations ⚡','Tailor-Made ERP Ecosystems 🚀'];
+let ri=0, ci=0, del=false;
+const tw = document.getElementById('typewriter');
+(function type(){
+  const word = roles[ri];
+  tw.textContent = word.slice(0, ci);
+  if(!del){ ci++; if(ci>word.length){ del=true; return setTimeout(type,1400);} }
+  else{ ci--; if(ci===0){ del=false; ri=(ri+1)%roles.length; } }
+  setTimeout(type, del?35:70);
+})();
+
+/* ============ CLOCK ============ */
+function tickClock(){
+  try{
+    const t = new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(new Date());
+    document.getElementById('mumbaiTime2').textContent = t+' IST';
+  }catch(e){}
+}
+setInterval(tickClock,1000); tickClock();
+
+/* ============ NAV / PROGRESS ============ */
+const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{ mobileMenu.classList.toggle('hidden'); menuBtn.innerHTML = mobileMenu.classList.contains('hidden')?'<i class="fa-solid fa-bars"></i>':'<i class="fa-solid fa-xmark"></i>'; });
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.add('hidden');menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';}));
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement; const p=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('scrollProgress').style.width=p+'%';
+  const tt=document.getElementById('toTop');
+  if(h.scrollTop>600){ tt.classList.remove('hidden'); tt.classList.add('flex'); } else { tt.classList.add('hidden'); tt.classList.remove('flex'); }
+});
+document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ CURSOR ============ */
+const dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing'), glow=document.getElementById('cursorGlow');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; glow.style.left=mx+'px'; glow.style.top=my+'px'; });
+(function ringLoop(){ rx+=(mx-rx)*.16; ry+=(my-ry)*.16; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(ringLoop); })();
+document.querySelectorAll('a,button,.proj-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ dot.style.width='26px'; dot.style.height='26px'; dot.style.background='#FFC700'; ring.style.width='56px'; ring.style.height='56px'; });
+  el.addEventListener('mouseleave',()=>{ dot.style.width='14px'; dot.style.height='14px'; dot.style.background='#FF2E93'; ring.style.width='38px'; ring.style.height='38px'; });
+});
+
+/* ============ REVEALS & COUNTERS ============ */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  if(e.target.classList.contains('counter')){
+    const end=+e.target.dataset.count; let cur=0; const step=Math.max(1,Math.ceil(end/60));
+    const t=setInterval(()=>{ cur+=step; if(cur>=end){cur=end;clearInterval(t);} e.target.textContent=cur; },30);
+  }
+  if(e.target.classList.contains('progress-fill')) e.target.style.width=e.target.dataset.w;
+  io.unobserve(e.target);
+}),{threshold:.4});
+document.querySelectorAll('.counter,.progress-fill').forEach(el=>io.observe(el));
+
+gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.reveal').forEach(el=>{
+  gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+
+/* ============ TILT & MAGNETIC ============ */
+const tilt=document.getElementById('tiltCard');
+if(tilt){ document.addEventListener('mousemove',e=>{
+  const r=tilt.getBoundingClientRect(); const x=e.clientX-(r.left+r.width/2), y=e.clientY-(r.top+r.height/2);
+  if(Math.abs(x)<500&&Math.abs(y)<500) tilt.style.transform=`perspective(900px) rotateY(${x/22}deg) rotateX(${-y/22}deg)`;
+}); }
+
+document.querySelectorAll('.magnetic').forEach(b=>{
+  b.addEventListener('mousemove',e=>{ const r=b.getBoundingClientRect(); b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.15}px,${(e.clientY-r.top-r.height/2)*.2}px)`; });
+  b.addEventListener('mouseleave',()=>b.style.transform='translate(0,0)');
+});
+
+/* ============ RENDER PROJECTS ============ */
+function renderProjects(f='all'){
+  const grid=document.getElementById('projectsGrid');
+  const list=PROJECTS.filter(p=>f==='all'||p.cat===f);
+  grid.innerHTML=list.map((p,i)=>`
+    <article onclick="openProject('${p.title.replace(/'/g, "\\'")}')" class="proj-card card-brutal rounded-3xl overflow-hidden cursor-pointer wiggle ${i%3===1?'md:-rotate-1':'md:rotate-1'} flex flex-col justify-between">
+      <div>
+        <div class="relative h-48 overflow-hidden border-b-[3px] border-ink">
+          <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover" loading="lazy"/>
+          <div class="absolute inset-0" style="background:${p.grad}; opacity:.32; mix-blend-mode:multiply"></div>
+          <span class="absolute top-3 left-3 font-mono text-[11px] font-bold bg-white border-2 border-ink rounded-full px-3 py-1 shadow-[3px_3px_0_#0F0F1A]">📊 ${p.metric}</span>
+          <span class="absolute top-3 right-3 w-9 h-9 bg-[#FFC700] border-2 border-ink rounded-full flex items-center justify-center"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-sora font-extrabold text-lg leading-tight">${p.title}</h3>
+          <p class="text-[13.5px] text-ink/65 font-medium mt-1.5 line-clamp-2">${p.short}</p>
+          <div class="flex flex-wrap gap-1.5 mt-3">${p.tags.map(t=>`<span class="text-[10.5px] font-bold bg-cream border-2 border-ink rounded-full px-2 py-[2px]">${t}</span>`).join('')}</div>
+        </div>
+      </div>
+      <div class="px-5 pb-5">
+        <div class="font-sora font-bold text-sm text-[#FF2E93] flex items-center justify-between">
+          <span>View case study →</span>
+          <span class="text-xs bg-[#A3E635] text-ink px-2 py-0.5 rounded-full border border-ink">LIVE DEMO</span>
+        </div>
+      </div>
+    </article>`).join('');
+  gsap.from('#projectsGrid > article',{y:26,opacity:0,stagger:.05,duration:.5,ease:'back.out(1.3)'});
+}
+renderProjects();
+
+document.querySelectorAll('.pfilter-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.pfilter-btn').forEach(x=>{x.classList.remove('active');x.classList.remove('bg-ink','text-white');x.classList.add('bg-white');});
+  b.classList.add('active'); renderProjects(b.dataset.pfilter);
+}));
+
+function openProject(title){
+  const p=PROJECTS.find(x=>x.title===title); if(!p) return;
+  document.getElementById('projModalContent').innerHTML=`
+    <div class="relative h-56 overflow-hidden rounded-t-[20px] border-b-[3px] border-ink">
+      <img src="${p.img}" class="w-full h-full object-cover"/>
+      <div class="absolute inset-0" style="background:${p.grad}; opacity:.35; mix-blend-mode:multiply"></div>
+      <button onclick="closeProject()" class="absolute top-4 right-4 w-10 h-10 bg-white border-[2.5px] border-ink rounded-xl shadow-[3px_3px_0_#0F0F1A] hover:scale-110 transition"><i class="fa-solid fa-xmark"></i></button>
+      <span class="absolute bottom-4 left-5 font-sora font-extrabold text-white text-base md:text-lg bg-ink px-4 py-1.5 rounded-xl border-2 border-white">📊 ${p.metric}</span>
+    </div>
+    <div class="p-6 md:p-8">
+      <h3 class="font-sora font-extrabold text-2xl md:text-3xl">${p.title}</h3>
+      <div class="flex flex-wrap gap-1.5 mt-3">${p.tags.map(t=>`<span class="text-xs font-bold bg-cream border-2 border-ink rounded-full px-3 py-1">${t}</span>`).join('')}</div>
+      <div class="grid md:grid-cols-2 gap-3 mt-5">
+        <div class="bg-[#FFF1F7] border-2 border-ink rounded-2xl p-4"><div class="font-sora font-extrabold text-sm text-[#FF2E93]">😩 THE BOTTLENECK</div><p class="text-sm font-medium text-ink/70 mt-1">${p.challenge}</p></div>
+        <div class="bg-[#EFFCFF] border-2 border-ink rounded-2xl p-4"><div class="font-sora font-extrabold text-sm text-[#0891b2]">⚡ THE ERP SOLUTION</div><p class="text-sm font-medium text-ink/70 mt-1">${p.solution}</p></div>
+      </div>
+      <div class="bg-[#EFFFEF] border-2 border-ink rounded-2xl p-4 mt-3"><div class="font-sora font-extrabold text-sm">🏆 BUSINESS IMPACT & METRICS</div><ul class="mt-2 space-y-1.5">${p.results.map(r=>`<li class="text-sm font-bold flex gap-2"><span class="text-green-600">✔</span> ${r}</li>`).join('')}</ul></div>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20to%20see%20a%20live%20demo%20of%20${encodeURIComponent(p.title)}" target="_blank" class="flex-1 text-center btn-brutal bg-[#25D366] text-white font-sora font-bold py-3 rounded-2xl"><i class="fa-brands fa-whatsapp mr-1 text-lg"></i> Book Live Demo of this System</a>
+        <button onclick="closeProject()" class="btn-brutal bg-white font-bold px-6 py-3 rounded-2xl">Close</button>
+      </div>
+    </div>`;
+  const m=document.getElementById('projModal'); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow='hidden';
+}
+function closeProject(){ const m=document.getElementById('projModal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow=''; }
+document.getElementById('projModal').addEventListener('click',e=>{ if(e.target.id==='projModal') closeProject(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeProject(); toggleChat(false);} });
+
+/* ============ RENDER SKILLS ============ */
+function renderSkills(f='all'){
+  const grid=document.getElementById('skillsGrid');
+  const list=SKILLS.filter(s=>f==='all'||s.cat===f);
+  grid.innerHTML=list.map((s,i)=>`
+    <div class="card-brutal rounded-2xl p-5 ${i%3===0?'rotate-[-1deg]':i%3===1?'rotate-[1deg]':''}" style="background:${i%2?'#fff':'#FFFEF7'}">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl border-[2.5px] border-ink flex items-center justify-center text-xl text-white shrink-0" style="background:${s.color}"><i class="${s.icon}"></i></div>
+          <div><h4 class="font-sora font-extrabold leading-tight">${s.name}</h4><span class="text-[11px] font-mono font-bold bg-ink text-white px-2 py-[1px] rounded-full">${s.yrs}</span></div>
+        </div>
+        <span class="font-sora font-extrabold text-lg grad-text">${s.level}%</span>
+      </div>
+      <p class="text-[13px] text-ink/65 font-medium mt-2">${s.desc}</p>
+      <div class="h-3.5 bg-ink/10 border-2 border-ink rounded-full mt-3 overflow-hidden"><div class="h-full rounded-full progress-fill" data-w="${s.level}%" style="background:linear-gradient(90deg,${s.color},#FF2E93)"></div></div>
+    </div>`).join('');
+  grid.querySelectorAll('.progress-fill').forEach(el=>requestAnimationFrame(()=>setTimeout(()=>el.style.width=el.dataset.w,80)));
+}
+renderSkills();
+document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+  renderSkills(b.dataset.filter);
+  gsap.from('#skillsGrid > div',{y:24,opacity:0,stagger:.06,duration:.5,ease:'back.out(1.4)'});
+}));
+
+/* ============ RENDER EXPERIENCE ============ */
+function renderExp(){
+  const wrap=document.getElementById('expList');
+  wrap.innerHTML=EXPERIENCE.map((e,i)=>`
+    <div class="exp-item ${i===0?'open':''} relative md:grid md:grid-cols-2 md:gap-12 items-start" data-i="${i}">
+      <div class="hidden md:block ${i%2? 'order-2':''}"></div>
+      <div class="${i%2?'md:order-1 md:text-right':''} pl-14 md:pl-0 relative">
+        <div class="absolute left-[14px] md:hidden top-2 w-5 h-5 rounded-full border-[3px] border-ink z-10" style="background:${e.tagColor}"></div>
+        <div class="hidden md:block absolute ${i%2?' -right-[35px]':' -left-[35px]'} top-2 w-6 h-6 rounded-full border-[3px] border-white z-10 shadow" style="background:${e.tagColor}"></div>
+        <div onclick="toggleExp(${i})" class="cursor-pointer bg-white text-ink border-[3px] border-ink rounded-3xl p-6 shadow-[7px_7px_0_#FF2E93] hover:-translate-y-1 transition-transform text-left ${i%2?'md:shadow-[-7px_7px_0_#06B6D4]':''}">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl border-[3px] border-ink flex items-center justify-center font-sora font-extrabold text-2xl text-white shrink-0" style="background:${e.logoBg}">${e.logo}</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-2"><span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-full border-2 border-ink" style="background:${e.tagColor}; color:#0F0F1A">${e.tag}</span><span class="font-mono text-[11px] font-bold text-ink/50">${e.period}</span></div>
+              <h3 class="font-sora font-extrabold text-lg leading-snug mt-1.5">${e.role}</h3>
+              <p class="font-bold text-sm text-[#FF2E93]">${e.company} • <span class="text-ink/50">${e.loc}</span></p>
+            </div>
+            <div class="exp-arrow w-9 h-9 shrink-0 rounded-full bg-ink text-white flex items-center justify-center"><i class="fa-solid fa-chevron-down text-sm"></i></div>
+          </div>
+          <div class="exp-body" id="expBody${i}">
+            <ul class="mt-4 space-y-2.5 text-[14px] font-medium text-ink/70 text-left">
+              ${e.points.map(p=>`<li class="flex gap-2"><span class="text-[#FF2E93] font-bold mt-[1px]">▸</span><span>${p}</span></li>`).join('')}
+            </ul>
+            <div class="flex flex-wrap gap-1.5 mt-4">${e.tech.map(t=>`<span class="text-[11px] font-mono font-bold bg-cream border-2 border-ink rounded-full px-2.5 py-1">${t}</span>`).join('')}</div>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('.exp-item.open').forEach(el=>{ const b=el.querySelector('.exp-body'); b.style.maxHeight=b.scrollHeight+'px'; });
+}
+renderExp();
+function toggleExp(i){
+  const item=document.querySelector(`.exp-item[data-i="${i}"]`); const body=document.getElementById('expBody'+i);
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.exp-item.open').forEach(el=>{ el.classList.remove('open'); el.querySelector('.exp-body').style.maxHeight='0px'; });
+  if(!open){ item.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px'; }
+}
+
+/* ============ ROI CALCULATOR ============ */
+const inH=document.getElementById('inHours'), inT=document.getElementById('inTeam'), inR=document.getElementById('inRate');
+function calcROI(){
+  const h=+inH.value, t=+inT.value, r=+inR.value;
+  document.getElementById('vHours').textContent=h+' hrs';
+  document.getElementById('vTeam').textContent=t+' people';
+  document.getElementById('vRate').textContent='₹'+r.toLocaleString('en-IN');
+  const savedH=Math.round(h*.85*t*52);
+  const money=savedH*r;
+  document.getElementById('outHours').textContent=savedH.toLocaleString('en-IN');
+  document.getElementById('outMoney').textContent = money>=100000 ? '₹'+(money/100000).toFixed(1)+'L' : '₹'+Math.round(money/1000)+'K';
+  document.getElementById('outEff').textContent='+'+Math.min(94, 70+Math.round(h/2))+'%';
+  document.getElementById('outBar').style.width=Math.min(96,70+h)+'%';
+}
+[inH,inT,inR].forEach(el=>el.addEventListener('input',calcROI)); calcROI();
+
+/* ============ TOAST & CONFETTI ============ */
+function showToast(msg, icon='✅'){
+  const t=document.createElement('div');
+  t.className='toast-in bg-ink text-white border-[2.5px] border-white rounded-2xl px-4 py-3 font-bold text-sm flex items-center gap-2 shadow-brutal';
+  t.innerHTML=`<span class="text-xl">${icon}</span><span>${msg}</span>`;
+  document.getElementById('toasts').appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(10px)'; setTimeout(()=>t.remove(),400); },3200);
+}
+function copyText(txt,label){
+  navigator.clipboard.writeText(txt).then(()=>showToast(label+' copied! 📋')).catch(()=>showToast(label+': '+txt,'📌'));
+}
+function openEmail(){
+  const email = 'shyampandey1104@gmail.com';
+  const subject = encodeURIComponent('ERPNext Development & Consultation Inquiry');
+  const body = encodeURIComponent('Hi Shyamkumar,\n\nI visited your portfolio and would like to discuss an ERP / software requirement:\n\n- Company / Industry:\n- Key Modules Needed:\n- Expected Timeline:\n\nBest regards,');
+  
+  // 1. Copy to clipboard
+  navigator.clipboard.writeText(email);
+  showToast('Opening Gmail composer & copied email ID! ✉️');
+  
+  // 2. Open Gmail Web composer directly in new tab (works reliably on all browsers)
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+  window.open(gmailUrl, '_blank');
+}
+function openDemoModal(){
+  const m = document.getElementById('demoModal');
+  if(m){
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    burstConfetti(true);
+  }
+}
+function closeDemoModal(){
+  const m = document.getElementById('demoModal');
+  if(m){
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+  }
+}
+function scrollToContactForm(){
+  closeDemoModal();
+  const contact = document.getElementById('contact');
+  if(contact){
+    contact.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      const nameInput = document.getElementById('fName');
+      if(nameInput) {
+        nameInput.focus();
+        showToast('Fill this form & get WhatsApp response! 🚀');
+      }
+    }, 600);
+  }
+}
+
+/* ============ CONTACT FORM (GOOGLE SHEETS + EMAIL + DIRECT BACKEND ALERT) ============ */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCArZAXXe8aGWd3_52_2Dv-PmJaWo-9mc8pekLGYjVmU3t2DBEi9DMLVZINtmAkgMk/exec";
+
+document.getElementById('contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const n = document.getElementById('fName').value.trim();
+  const p = document.getElementById('fPhone').value.trim();
+  const em = document.getElementById('fEmail').value.trim();
+  const m = document.getElementById('fMsg').value.trim();
+  const sol = document.getElementById('fType').value;
+  const time = document.getElementById('fTimeline').value;
+
+  if(!n || !p){
+    showToast('Please fill Name and Phone / WhatsApp number! ⚠️','⚠️');
+    return;
+  }
+
+  const btn = document.getElementById('sendBtn');
+  const lbl = document.getElementById('sendLabel');
+  btn.disabled = true;
+  lbl.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Submitting Request...';
+
+  // 1. Send to Google Sheets & Email via Google Apps Script (Background webhook)
+  const formData = new FormData();
+  formData.append('Timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+  formData.append('Name', n);
+  formData.append('Phone', p);
+  formData.append('Email', em || 'Not provided');
+  formData.append('Solution', sol);
+  formData.append('Timeline', time);
+  formData.append('Workflow', m || 'Not specified');
+
+  try {
+    if(!GOOGLE_SCRIPT_URL.includes('REPLACE_WITH')) {
+      fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+    }
+  } catch (err) {
+    console.log('Sheet Sync:', err);
+  }
+
+  setTimeout(() => {
+    btn.disabled = false;
+    lbl.textContent = 'Send Request & Book Demo 🚀';
+    
+    // Explicitly wipe all inputs and reset form
+    document.getElementById('contactForm').reset();
+    document.getElementById('fName').value = '';
+    document.getElementById('fPhone').value = '';
+    if(document.getElementById('fEmail')) document.getElementById('fEmail').value = '';
+    if(document.getElementById('fMsg')) document.getElementById('fMsg').value = '';
+    if(document.getElementById('fType')) document.getElementById('fType').selectedIndex = 0;
+    if(document.getElementById('fTimeline')) document.getElementById('fTimeline').selectedIndex = 0;
+
+    burstConfetti();
+    showToast(`✅ Thank you ${n.split(' ')[0]}! Your demo request has been received.`);
+    
+    // In-place success notification banner
+    const formBox = document.getElementById('contactForm');
+    const succDiv = document.createElement('div');
+    succDiv.className = 'toast-in bg-[#A3E635] text-ink border-[2.5px] border-ink rounded-2xl p-4 text-center shadow-brutalSm my-3';
+    succDiv.innerHTML = `
+      <div class="font-sora font-extrabold text-base">🎉 Inquiry Successfully Sent!</div>
+      <div class="text-xs font-semibold mt-1 text-ink/80">Shyamkumar has received your request and will reach out to <b>${p}</b>${em ? ` and <b>${em}</b>` : ''} shortly.</div>
+    `;
+    formBox.prepend(succDiv);
+    setTimeout(() => {
+      succDiv.style.opacity = '0';
+      succDiv.style.transform = 'translateY(-10px)';
+      setTimeout(() => succDiv.remove(), 400);
+    }, 8000);
+  }, 700);
+});
+
+/* ============ CHATBOT ============ */
+let chatOpen=false;
+function toggleChat(force){
+  chatOpen = force!==undefined?force:!chatOpen;
+  document.getElementById('chatPanel').classList.toggle('hidden',!chatOpen);
+  if(chatOpen && !document.getElementById('chatBody').children.length){
+    botSay(`Hey! I'm <b>ShyamBot</b> 🤖 — your ERP & Automation assistant.<br><br>I can help you explore ready systems, custom DocTypes, or book a live 1-on-1 demo with <b>Shyam</b>!`);
+    renderChatChips([
+      '🏫 School ERP',
+      '🏢 Real Estate CRM',
+      '💎 Jewelry MS',
+      '📦 Standard & Custom Modules',
+      '⚛️ Headless React + Frappe',
+      '🏷️ Biometric & WhatsApp',
+      '📅 Book Live Demo'
+    ]);
+  }
+}
+function renderChatChips(chips){
+  const b=document.getElementById('chatBody');
+  const d=document.createElement('div');
+  d.className='flex flex-wrap gap-1.5 pt-1.5';
+  chips.forEach(chip=>{
+    const btn=document.createElement('button');
+    btn.className='text-[11.5px] font-mono font-bold bg-white text-ink border-2 border-ink px-2.5 py-1 rounded-full shadow-xs hover:bg-[#FFC700] hover:scale-105 transition';
+    btn.textContent=chip;
+    btn.onclick=()=>{
+      document.getElementById('chatInput').value=chip;
+      sendChat();
+    };
+    d.appendChild(btn);
+  });
+  b.appendChild(d);
+  b.scrollTop=b.scrollHeight;
+}
+function botSay(html){
+  const b=document.getElementById('chatBody');
+  const d=document.createElement('div'); d.className='chat-msg-bot rounded-2xl rounded-tl-md px-3.5 py-2.5 shadow-sm'; d.innerHTML=html;
+  b.appendChild(d); b.scrollTop=b.scrollHeight;
+}
+function userSay(t){
+  const b=document.getElementById('chatBody');
+  const d=document.createElement('div'); d.className='chat-msg-user rounded-2xl rounded-tr-md px-3.5 py-2.5 ml-8 text-right shadow-sm'; d.textContent=t;
+  b.appendChild(d); b.scrollTop=b.scrollHeight;
+}
+function sendChat(){
+  const inp=document.getElementById('chatInput'); const t=inp.value.trim(); if(!t) return;
+  userSay(t); inp.value='';
+  const b=document.getElementById('chatBody');
+  const typing=document.createElement('div'); typing.className='chat-msg-bot rounded-2xl px-3 py-2.5 inline-flex gap-1'; typing.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  b.appendChild(typing); b.scrollTop=b.scrollHeight;
+  setTimeout(()=>{
+    typing.remove();
+    botSay(botReply(t.toLowerCase()));
+  }, 600);
+}
+document.getElementById('chatInput').addEventListener('keydown',e=>{ if(e.key==='Enter') sendChat(); });
+
+function botReply(q){
+  if(/school|education|student|parent|fee|exam/.test(q)) {
+    return `🏫 <b>School & Coaching ERP:</b><br>• Student lifecycle & online fee gateway<br>• Real-time Biometric & RFID attendance<br>• Automated WhatsApp alerts to parents<br><br><a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20a%20live%20demo%20of%20School%20ERP" target="_blank" class="inline-block mt-1 font-bold text-xs bg-[#25D366] text-white px-3 py-1.5 rounded-lg border border-ink">🚀 WhatsApp Demo →</a>`;
+  }
+  if(/real estate|crm|broker|builder|lead|exotel|calling/.test(q)) {
+    return `🏢 <b>Real Estate CRM:</b><br>• Multi-channel lead capture (FB/Google)<br>• 1-Click Exotel click-to-call & recording<br>• Instant Aadhaar / PAN KYC API check<br>• Broker payouts & milestone tracking<br><br><a href="https://wa.me/919867778229?text=Hi%20Shyam,%20I%20want%20a%20live%20demo%20of%20Real%20Estate%20CRM" target="_blank" class="inline-block mt-1 font-bold text-xs bg-[#25D366] text-white px-3 py-1.5 rounded-lg border border-ink">🚀 WhatsApp Demo →</a>`;
+  }
+  if(/jewelry|jewellery|gold|karigar|melting|wastage/.test(q)) {
+    return `💎 <b>Jewelry Manufacturing ERP:</b><br>• Karigar job cards & melting loss calculation<br>• Worker-wise metal balance & purity tracking<br>• RFID shop-floor stock scan & security<br>• Bullion purchase, selling & GST invoices<br><br><a href="https://wa.me/919867778229?text=Hi%20Shyam,%20tell%20me%20about%20Jewelry%20MS" target="_blank" class="inline-block mt-1 font-bold text-xs bg-[#25D366] text-white px-3 py-1.5 rounded-lg border border-ink">🚀 Book Demo →</a>`;
+  }
+  if(/module|custom|doctype|standard|hrms|payroll|manufactur|bom|excel|separate/.test(q)) {
+    return `📦 <b>1 Unified System for Everything:</b><br>Instead of paying for separate HRMS, Payroll, Manufacturing, and Excel sheets:<br>• Shyam customizes <b>all standard ERPNext modules</b><br>• Builds <b>100% custom Frappe DocTypes & apps</b> for unique workflows<br>• Connects all your hardware & APIs seamlessly!`;
+  }
+  if(/react|headless|frontend|ui|portal|web/.test(q)) {
+    return `⚛️ <b>Headless ERP + Custom React UI:</b><br>Get the robust Frappe/ERPNext backend paired with a bespoke, lightning-fast <b>React frontend or customer portal</b> tailored specifically to your branding!`;
+  }
+  if(/biometric|rfid|hardware|device|zkteco|essl|exotel|whatsapp/.test(q)) {
+    return `🏷️ <b>Hardware & API Integrations:</b><br>• Biometric & RFID device auto-sync daemons<br>• Official WhatsApp Cloud API triggers<br>• Exotel telephony click-to-call & recording<br>• Govt Aadhaar / PAN / Voter ID verification`;
+  }
+  if(/demo|book|pricing|cost|quote|hire|price|schedule/.test(q)) {
+    return `
+      <div class="bot-lead-card bg-white border-2 border-ink rounded-xl p-3 shadow-xs space-y-2 text-left mt-1">
+        <div class="font-sora font-extrabold text-xs text-ink flex items-center gap-1.5">
+          <span>📅</span> <span>Book a 15-Min Live Demo</span>
+        </div>
+        <p class="text-[11px] text-ink/75 leading-tight">Enter your details to schedule a live demo & receive an instant email confirmation:</p>
+        <input type="text" placeholder="Your Name *" class="bot-name w-full text-xs border border-ink/40 rounded-lg px-2.5 py-1.5 bg-cream focus:outline-none focus:border-ink font-medium" />
+        <input type="text" placeholder="Phone / WhatsApp *" class="bot-phone w-full text-xs border border-ink/40 rounded-lg px-2.5 py-1.5 bg-cream focus:outline-none focus:border-ink font-medium" />
+        <input type="email" placeholder="Your Email (For Confirmation) *" class="bot-email w-full text-xs border border-ink/40 rounded-lg px-2.5 py-1.5 bg-cream focus:outline-none focus:border-ink font-medium" />
+        <select class="bot-sol w-full text-xs border border-ink/40 rounded-lg px-2 py-1.5 bg-cream focus:outline-none font-medium">
+          <option value="School & Institute ERP">🏫 School & Institute ERP</option>
+          <option value="Real Estate CRM & Telephony">🏢 Real Estate CRM & Telephony</option>
+          <option value="Jewelry Manufacturing MS">💎 Jewelry Manufacturing MS</option>
+          <option value="Custom ERPNext & DocTypes">⚙️ Custom ERPNext & DocTypes</option>
+          <option value="Headless React + Frappe">⚛️ Headless React + Frappe</option>
+          <option value="Biometric / RFID / WhatsApp">🏷️ Biometric / RFID / WhatsApp</option>
+        </select>
+        <button onclick="submitBotLead(this)" class="w-full btn-brutal grad-bg text-white font-bold text-xs py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-xs">
+          <span>Confirm & Send Email Alert 🚀</span>
+        </button>
+      </div>
+    `;
+  }
+  if(/contact|phone|email|number|reach|address|location/.test(q)) {
+    return `📞 <b>Direct Contact Details:</b><br>• <b>Phone / WhatsApp:</b> +91 98677 78229<br>• <b>Email:</b> shyampandey1104@gmail.com<br>• <b>LinkedIn:</b> in/shyamkumarpandey<br>• <b>Location:</b> Mumbai, India 🇮🇳`;
+  }
+  if(/shyam|who|experience|developer|profile|about/.test(q)) {
+    return `👨‍💻 <b>Shyamkumar Bhupendra Pandey</b><br>• Senior ERPNext Developer & Team Lead<br>• Electronics & Telecom Engineer • IEEE Published Researcher<br>• 4+ Years Enterprise ERP & IoT Experience in Mumbai`;
+  }
+  if(/project|portfolio|work|case study/.test(q)) {
+    return `🚀 Shyam has built <b>16+ custom ERP and integration solutions</b> across Real Estate, Education, Jewelry, Healthcare, Tally Sync, and NGOs. Check out the <b>Projects</b> section!`;
+  }
+  if(/hi|hello|hey|namaste|morning|evening/.test(q)) {
+    return `Namaste! 🙏 How can I assist you with your ERP, CRM, or custom software requirements today?`;
+  }
+  return `I can assist you with <b>School ERP</b>, <b>Real Estate CRM</b>, <b>Jewelry MS</b>, <b>Custom Frappe Apps</b>, or connect you directly with Shyam at <b>+91 98677 78229</b>! ⚡`;
+}
+
+function submitBotLead(btn) {
+  const card = btn.closest('.bot-lead-card');
+  const name = card.querySelector('.bot-name').value.trim();
+  const phone = card.querySelector('.bot-phone').value.trim();
+  const email = card.querySelector('.bot-email').value.trim();
+  const sol = card.querySelector('.bot-sol').value;
+
+  if(!name || !phone) {
+    showToast('Please enter Name and Phone / WhatsApp number! ⚠️', '⚠️');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Scheduling & Sending Email...';
+
+  const formData = new FormData();
+  formData.append('Timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+  formData.append('Name', name);
+  formData.append('Phone', phone);
+  formData.append('Email', email || 'Not provided');
+  formData.append('Solution', sol);
+  formData.append('Timeline', 'Immediate (Booked via ShyamBot)');
+  formData.append('Workflow', 'Booked directly via ShyamBot AI assistant');
+
+  try {
+    if(!GOOGLE_SCRIPT_URL.includes('REPLACE_WITH')) {
+      fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+    }
+  } catch (err) {
+    console.log('Bot Lead Sync:', err);
+  }
+
+  setTimeout(() => {
+    burstConfetti();
+    showToast(`🎉 Demo scheduled! Email notification sent.`);
+    card.innerHTML = `
+      <div class="bg-[#EFFFEF] border-2 border-[#16a34a] rounded-xl p-3 text-left shadow-xs">
+        <div class="font-sora font-extrabold text-xs text-green-800 flex items-center gap-1">
+          <span>🎉</span> <span>Demo Request Confirmed!</span>
+        </div>
+        <p class="text-[11.5px] text-ink/80 mt-1 leading-relaxed">
+          Thank you <b>${name.split(' ')[0]}</b>! Notification has been delivered to <b>Shyam's email & WhatsApp</b>${email ? `, and a confirmation email has been sent to <b>${email}</b>` : ''}.
+        </p>
+        <div class="mt-2 pt-2 border-t border-green-300/60 flex items-center justify-between">
+          <span class="text-[10.5px] font-mono text-green-900 font-bold">15-Min Live Demo</span>
+          <a href="https://wa.me/919867778229?text=${encodeURIComponent('Hi Shyam, I just booked a demo for ' + sol + ' via ShyamBot!')}" target="_blank" class="text-[11px] font-bold bg-[#25D366] text-white px-2 py-0.5 rounded border border-ink">Chat on WhatsApp →</a>
+        </div>
+      </div>
+    `;
+    const b = document.getElementById('chatBody');
+    if(b) b.scrollTop = b.scrollHeight;
+  }, 700);
+}
+
+/* ============ MULTILINGUAL TRANSLATION ENGINE ============ */
+function toggleLangDropdown() {
+  const menu = document.getElementById('langDropdownMenu');
+  if(menu) menu.classList.toggle('hidden');
+}
+document.addEventListener('click', (e) => {
+  const container = document.getElementById('langDropdownContainer');
+  const menu = document.getElementById('langDropdownMenu');
+  if(container && menu && !container.contains(e.target)) {
+    menu.classList.add('hidden');
+  }
+});
+
+function setLanguage(langCode, langName, flag) {
+  const menu = document.getElementById('langDropdownMenu');
+  if(menu) menu.classList.add('hidden');
+  
+  const labelEl = document.getElementById('currentLangLabel');
+  const flagEl = document.getElementById('currentLangFlag');
+  if(labelEl) labelEl.textContent = langName.split(' ')[1] || langName;
+  if(flagEl) flagEl.textContent = flag;
+  
+  const mobileSelect = document.getElementById('mobileLangSelect');
+  if(mobileSelect) mobileSelect.value = langCode;
+
+  localStorage.setItem('site_lang_code', langCode);
+  localStorage.setItem('site_lang_name', langName);
+  localStorage.setItem('site_lang_flag', flag);
+
+  // Set Google Translate cookie
+  const host = window.location.hostname;
+  const cookieVal = (langCode === 'en' ? '' : '/en/' + langCode);
+  document.cookie = 'googtrans=' + cookieVal + '; path=/; domain=' + host;
+  document.cookie = 'googtrans=' + cookieVal + '; path=/;';
+
+  showToast(`🌐 Switching to ${langName}...`);
+
+  // Instant DOM Trigger with micro-polling (30ms)
+  let attempts = 0;
+  function applyTranslate() {
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      if (select.value !== langCode) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      showToast(`🌐 Ready in ${langName}!`);
+    } else if (attempts < 30) {
+      attempts++;
+      setTimeout(applyTranslate, 30);
+    } else {
+      location.reload();
+    }
+  }
+  applyTranslate();
+}
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedCode = localStorage.getItem('site_lang_code');
+  const savedName = localStorage.getItem('site_lang_name');
+  const savedFlag = localStorage.getItem('site_lang_flag');
+  if(savedCode && savedCode !== 'en') {
+    const labelEl = document.getElementById('currentLangLabel');
+    const flagEl = document.getElementById('currentLangFlag');
+    if(labelEl && savedName) labelEl.textContent = savedName.split(' ')[1] || savedName;
+    if(flagEl && savedFlag) flagEl.textContent = savedFlag;
+    const mobileSelect = document.getElementById('mobileLangSelect');
+    if(mobileSelect) mobileSelect.value = savedCode;
+  }
+});
+</script>
+
+<!-- FAST GOOGLE TRANSLATE CONTAINER & SCRIPT -->
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+</body>
+</html>

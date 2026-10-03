@@ -1,0 +1,12 @@
+# Ignore large database dumps and heavy bench environments
+*.sql
+*.tar.gz
+*.zip
+frappe-bench/
+logs/
+.agents/
+.qodo/
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/

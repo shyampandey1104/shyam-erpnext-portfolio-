@@ -1,0 +1,7 @@
+#!/usr/bin/expect -f
+set password "Frappe@Hrms!"
+# Update script to cancel before deleting
+spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227 "cd /home/frappe/frappe-bench && echo \"for b in \['Afternnoon-Batch', 'Afternoon-Batch', 'Morning-Batch'\]: \r    if frappe.db.exists('Batches', b):\r        doc = frappe.get_doc('Batches', b)\r        if doc.docstatus == 1:\r            doc.cancel()\r        frappe.delete_doc('Batches', b, ignore_missing=True, force=True)\rfrappe.db.commit(); print('BATCHES_CANCELLED_AND_DELETED')\" | bench --site aas.com console"
+expect "password:"
+send "$password\r"
+expect eof

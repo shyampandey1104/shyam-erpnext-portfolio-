@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "creation": "2026-09-04 11:20:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "bhk_type",
+  "area",
+  "column_break_1",
+  "plan_img",
+  "floor_pdf",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project & Plan Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bhk_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "BHK Configuration"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Carpet Area"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_img",
+   "fieldtype": "Data",
+   "label": "Floor Plan Image URL"
+  },
+  {
+   "fieldname": "floor_pdf",
+   "fieldtype": "Data",
+   "label": "Floor Layout PDF URL"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 11:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Unit Plan",
+ "naming_rule": "Expression",
+ "autoname": "format:UP-.####",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

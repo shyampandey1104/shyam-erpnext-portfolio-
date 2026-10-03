@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "creation": "2026-09-04 11:20:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "listing_type",
+  "title",
+  "locality",
+  "price",
+  "column_break_1",
+  "owner_or_agent",
+  "phone",
+  "status",
+  "commission",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "listing_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Listing Type",
+   "options": "My Listing\nEmployee Listing\nOwner Lead\nOwner Listing\nCP Listing\nCheck Demand",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Property Name / Config",
+   "reqd": 1
+  },
+  {
+   "fieldname": "locality",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Locality / Area"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "owner_or_agent",
+   "fieldtype": "Data",
+   "label": "Owner / Agent / CP Broker"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "default": "Active"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Data",
+   "label": "Commission Split"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 11:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Property Listing",
+ "naming_rule": "Expression",
+ "autoname": "format:LST-.####",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

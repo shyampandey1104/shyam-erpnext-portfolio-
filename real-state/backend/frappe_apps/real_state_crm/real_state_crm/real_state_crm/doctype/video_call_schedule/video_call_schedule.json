@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "creation": "2026-09-04 11:25:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client",
+  "project",
+  "platform",
+  "column_break_1",
+  "link",
+  "time",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Virtual Tour Project"
+  },
+  {
+   "fieldname": "platform",
+   "fieldtype": "Data",
+   "label": "Platform (Zoom/Meet/WA)",
+   "default": "Zoom HD Tour"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Data",
+   "label": "Meeting Link URL"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Data",
+   "label": "Call Time"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "default": "Scheduled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 11:25:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Video Call Schedule",
+ "naming_rule": "Expression",
+ "autoname": "format:VCS-.####",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

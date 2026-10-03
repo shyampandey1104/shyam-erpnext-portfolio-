@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+set password "Frappe@Hrms!"
+spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227 "cd /home/frappe/frappe-bench && bench --site aas.com execute \"frappe.delete_doc('Branches', 'Dewas', ignore_missing=True, force=True); frappe.delete_doc('Branches', 'Indore', ignore_missing=True, force=True); frappe.db.commit(); print('DELETED_SUCCESSFULLY')\""
+expect "password:"
+send "$password\r"
+expect eof

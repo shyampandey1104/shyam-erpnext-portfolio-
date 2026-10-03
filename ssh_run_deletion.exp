@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+set password "Frappe@Hrms!"
+# Copy the file to the server
+spawn scp -o StrictHostKeyChecking=no /Users/shyamkumarpandey/samwadini/delete_branches_v2.py root@103.192.198.227:/tmp/delete_branches.py
+expect "password:"
+send "$password\r"
+expect eof
+
+# Run the file using bench execute
+spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227 "cd /home/frappe/frappe-bench && bench --site aas.com execute /tmp/delete_branches.py"
+expect "password:"
+send "$password\r"
+expect eof

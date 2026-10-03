@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" href="https://dreamhomes-a8q0k6kx6-panorama7.vercel.app/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dreamhomes-a8q0k6kx6-panorama7.vercel.app/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="https://dreamhomes-a8q0k6kx6-panorama7.vercel.app/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/assets/real_state_crm/frontend/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/real_state_crm/frontend/icon-192.png" />
+    <link rel="shortcut icon" href="/assets/real_state_crm/frontend/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Dream Homes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href="/assets/real_state_crm/frontend/manifest.json" />
+    <title>Dream Homes - Real Estate CRM & Sales Portal</title>
+    <script type="module" crossorigin src="/assets/real_state_crm/frontend/assets/index-KZOacOlg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/real_state_crm/frontend/assets/index-BK_d5FG1.css">
+  </head>
+  <body>
+    <script>
+      window.csrf_token = "{{ frappe.session.data.csrf_token if frappe and frappe.session and frappe.session.data else '' }}";
+    </script>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          const swPath = window.location.pathname.startsWith('/assets/') ? '/assets/real_state_crm/frontend/sw.js' : '/sw.js';
+          navigator.serviceWorker.register(swPath).catch(() => {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

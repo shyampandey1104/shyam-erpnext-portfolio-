@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "NOTIF-.####",
+ "creation": "2026-09-04 11:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "source",
+  "notif_type",
+  "is_read",
+  "time_ago",
+  "section_break_lead",
+  "lead_id",
+  "lead_name",
+  "lead_phone",
+  "lead_location",
+  "lead_bhk",
+  "section_break_msg",
+  "message"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source"
+  },
+  {
+   "fieldname": "notif_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Notification Type",
+   "options": "followup\nvisit\ninbound\nlead\ntarget\nproject"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_read",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Read"
+  },
+  {
+   "fieldname": "time_ago",
+   "fieldtype": "Data",
+   "label": "Time Display"
+  },
+  {
+   "fieldname": "section_break_lead",
+   "fieldtype": "Section Break",
+   "label": "Associated Lead Details"
+  },
+  {
+   "fieldname": "lead_id",
+   "fieldtype": "Data",
+   "label": "Lead ID"
+  },
+  {
+   "fieldname": "lead_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead Name"
+  },
+  {
+   "fieldname": "lead_phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "lead_location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "lead_bhk",
+   "fieldtype": "Data",
+   "label": "BHK Type"
+  },
+  {
+   "fieldname": "section_break_msg",
+   "fieldtype": "Section Break",
+   "label": "Notification Message"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Message"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 11:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "real_state_crm",
+ "name": "Lead Notification",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

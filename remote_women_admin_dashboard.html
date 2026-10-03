@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samwadini Women Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #4a1942;
+            --primary-pink: #be185d;
+            --primary-pink-hover: #db2777;
+            --text-white: #ffffff;
+            --text-gray: #9ca3af;
+            --bg-light: #fdf2f8;
+            --card-bg: #ffffff;
+            --border-color: #fce7f3;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: #1f2937;
+            line-height: 1.5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--primary-pink);
+            letter-spacing: -0.025em;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .back-link {
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .logout-btn {
+            background: var(--primary-pink);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: var(--primary-pink-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #831843 100%);
+            padding: 1.5rem 2rem;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-content p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* Main Scrollable Area */
+        .dashboard-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        /* Charts Section */
+        .charts-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .month-select {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            font-size: 0.85rem;
+            outline: none;
+            background: #f9fafb;
+        }
+
+        /* Table Section */
+        .table-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: #f9fafb;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .status-open {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .status-progress {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <a href="/app/samwadini-women" class="back-btn" title="Back to AAS Dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+            <div class="logo">Samwadini Women Dashboard</div>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <style>
+        .back-btn {
+            color: var(--primary-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--bg-light);
+            color: var(--primary-pink-hover);
+        }
+    </style>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Women Admin Analytics</h1>
+            <p>Advanced monitoring of cases, trends, and resolution performance.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Filters Section -->
+        <div class="filters-section" style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 0.5rem; background: white; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <label for="center-select" style="font-size: 0.85rem; font-weight: 700; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0; display: inline-block;">Center:</label>
+                <select id="center-select" class="month-select" style="min-width: 200px;" onchange="handleCenterFilterChange()">
+                    <option value="">All Centers</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Stats summary -->
+        <div class="stats-grid" style="grid-template-columns: repeat(5, 1fr);">
+            <div class="stat-card">
+                <span class="stat-label">Total Outreach</span>
+                <span class="stat-value" id="total_outreach" style="color: #7c3aed;">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Registered Total Cases</span>
+                <span class="stat-value" id="total_cases" style="color: #2563eb;">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Total Open Cases</span>
+                <span class="stat-value" id="open_cases" style="color: #dc2626;">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Total Closed Cases</span>
+                <span class="stat-value" id="closed_cases" style="color: #059669;">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Awareness Programs</span>
+                <div style="display: flex; flex-direction: column;">
+                    <span class="stat-value" id="awareness_programs" style="color: #ea580c; font-size: 1.5rem;">0</span>
+                    <span style="font-size: 0.75rem; color: #6b7280; font-weight: 600;">Women Attended: <strong id="awareness_women" style="color: #0d9488;">0</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2 class="chart-title">Case Distribution by Category</h2>
+                    <select id="month-select" class="month-select" onchange="updateCategoryChart()">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div style="flex: 1; position: relative;">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2 class="chart-title">Lead Source Analysis</h2>
+                </div>
+                <div style="flex: 1; position: relative;">
+                    <canvas id="sourceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Cases Table -->
+        <div class="table-container">
+            <div class="chart-header">
+                <h2 class="chart-title">Long-standing Pending Cases (Top 10)</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case #</th>
+                        <th>Beneficiary</th>
+                        <th>Category</th>
+                        <th>Opened Date</th>
+                        <th>Current Status</th>
+                    </tr>
+                </thead>
+                <tbody id="pending-cases-list"></tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; padding: 1rem 0;">
+            <a href="/app/woman-case" style="color: var(--primary-pink); font-weight: 600; text-decoration: none;">View
+                All Cases →</a>
+        </div>
+    </div>
+
+    <script>
+        let dashboardData = null;
+        let categoryChart = null;
+        let sourceChart = null;
+        let centerPopulated = false;
+
+        function handleLogout() {
+            fetch('/api/method/logout', { method: 'GET', credentials: 'include' })
+                .finally(() => window.location.replace('/login'));
+        }
+
+        function handleCenterFilterChange() {
+            fetchDashboardData();
+        }
+
+        async function fetchDashboardData() {
+            try {
+                console.log('Fetching analytics data...');
+                let url = '/api/method/samwadini.samwadini_women.dashboard_stats.get_dashboard_stats';
+                const centerVal = document.getElementById('center-select') ? document.getElementById('center-select').value : '';
+                if (centerVal) {
+                    url += '?branch_id=' + encodeURIComponent(centerVal);
+                }
+                const response = await fetch(url, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                console.log('API Response:', data);
+
+                if (data.message) {
+                    dashboardData = data.message;
+                    
+                    // Populate Center dropdown dynamically if not done yet
+                    if (!centerPopulated && dashboardData.branches) {
+                        const centerSelect = document.getElementById('center-select');
+                        if (centerSelect) {
+                            centerSelect.innerHTML = '<option value="">All Centers</option>';
+                            dashboardData.branches.forEach(b => {
+                                centerSelect.innerHTML += `<option value="${b.name}">${b.name}</option>`;
+                            });
+                            centerPopulated = true;
+                        }
+                    }
+
+                    renderDashboard();
+                } else {
+                    console.error('No dashboard data received:', data);
+                }
+            } catch (err) {
+                console.error('Error fetching analytics:', err);
+            }
+        }
+
+        function renderDashboard() {
+            if (!dashboardData) return;
+
+            // Summary Cards
+            if (document.getElementById('total_outreach')) {
+                document.getElementById('total_outreach').textContent = dashboardData.counts.total_outreach || dashboardData.counts.total_profiles || 0;
+            }
+            document.getElementById('total_cases').textContent = dashboardData.counts.total_cases || 0;
+            document.getElementById('open_cases').textContent = dashboardData.counts.open_cases || 0;
+            document.getElementById('closed_cases').textContent = dashboardData.counts.closed_cases || 0;
+            if (document.getElementById('awareness_programs') && dashboardData.awareness_stats) {
+                document.getElementById('awareness_programs').textContent = dashboardData.awareness_stats.total_programs || 0;
+                document.getElementById('awareness_women').textContent = dashboardData.awareness_stats.total_women_attended || 0;
+            }
+
+            // Month Select Population
+            const monthSet = new Set();
+            if (dashboardData.monthly_cases && dashboardData.monthly_cases.length > 0) {
+                dashboardData.monthly_cases.forEach(d => {
+                    if (d.month) monthSet.add(d.month);
+                });
+            }
+
+            const months = Array.from(monthSet).sort().reverse();
+            const select = document.getElementById('month-select');
+
+            if (select) {
+                let optionsHtml = '<option value="ALL">ALL</option>';
+                optionsHtml += months.map(m => `<option value="${m}">${m}</option>`).join('');
+                select.innerHTML = optionsHtml;
+                select.value = 'ALL';
+            }
+
+            updateCategoryChart();
+            renderSourceChart();
+            renderPendingCases();
+        }
+
+        function updateCategoryChart() {
+            if (!dashboardData) return;
+
+            const select = document.getElementById('month-select');
+            const selectedMonth = select ? select.value : 'ALL';
+
+            let monthData = dashboardData.monthly_cases || [];
+            if (selectedMonth && selectedMonth !== 'ALL') {
+                monthData = monthData.filter(d => d.month === selectedMonth);
+            }
+
+            const categories = [...new Set(monthData.map(d => d.category_id))].filter(Boolean);
+            const resolvedData = categories.map(cat => {
+                const items = monthData.filter(d => d.category_id === cat && d.simplified_status === 'Resolved');
+                return items.reduce((sum, item) => sum + (item.count || 0), 0);
+            });
+            const openData = categories.map(cat => {
+                const items = monthData.filter(d => d.category_id === cat && d.simplified_status === 'Open');
+                return items.reduce((sum, item) => sum + (item.count || 0), 0);
+            });
+
+            if (categoryChart) categoryChart.destroy();
+            const ctx = document.getElementById('categoryChart').getContext('2d');
+            categoryChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: categories,
+                    datasets: [
+                        { label: 'Open', data: openData, backgroundColor: '#fb7185', borderRadius: 6 },
+                        { label: 'Resolved', data: resolvedData, backgroundColor: '#34d399', borderRadius: 6 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#f3f4f6' }, ticks: { precision: 0 } },
+                        x: { 
+                            grid: { display: false },
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                callback: function(value) {
+                                    const label = this.getLabelForValue(value);
+                                    return label.length > 25 ? label.substring(0, 25) + '...' : label;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } },
+                        tooltip: { backgroundColor: '#1f2937', padding: 12 }
+                    }
+                }
+            });
+        }
+
+        function renderSourceChart() {
+            const data = dashboardData.source_stats;
+            const labels = data.map(d => d.source || 'Unknown');
+            const counts = data.map(d => d.count);
+
+            if (sourceChart) sourceChart.destroy();
+            const ctx = document.getElementById('sourceChart').getContext('2d');
+            sourceChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: ['#be185d', '#7c3aed', '#2563eb', '#0d9488', '#ea580c', '#059669'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
+        }
+
+        function renderPendingCases() {
+            const tableBody = document.getElementById('pending-cases-list');
+            tableBody.innerHTML = dashboardData.pending_cases.map(c => `
+                <tr>
+                    <td><b>${c.case_number}</b></td>
+                    <td>${c.woman_profile_id}</td>
+                    <td>${c.category_id}</td>
+                    <td>${new Date(c.opened_at).toLocaleDateString()}</td>
+                    <td><span class="status-badge ${c.status === 'OPEN' ? 'status-open' : 'status-progress'}">${c.status}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // Initialize
+        fetchDashboardData();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Rahul Sharma",
+      "email": "rahul.sharma@leadcallcrm.in",
+      "phone": "+91 98200 44556",
+      "role": "Telecaller",
+      "status": "Active",
+      "areas": [
+        "Andheri",
+        "Bandra"
+      ],
+      "leadCap": 50,
+      "initials": "RS"
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Kumar",
+      "email": "rajesh@saarva.com",
+      "phone": "+91 98201 11223",
+      "role": "Telecaller",
+      "status": "Active",
+      "areas": [
+        "Andheri",
+        "Bandra"
+      ],
+      "leadCap": 50,
+      "initials": "RK"
+    },
+    {
+      "id": 3,
+      "name": "Priya Sharma",
+      "email": "priya@saarva.com",
+      "phone": "+91 98920 33445",
+      "role": "Telecaller",
+      "status": "Active",
+      "areas": [
+        "Powai",
+        "Thane"
+      ],
+      "leadCap": 45,
+      "initials": "PS"
+    },
+    {
+      "id": 4,
+      "name": "Amit Patel",
+      "email": "amit@saarva.com",
+      "phone": "+91 98111 22334",
+      "role": "Mining Caller",
+      "status": "Active",
+      "areas": [
+        "Navi Mumbai"
+      ],
+      "leadCap": 30,
+      "initials": "AP"
+    },
+    {
+      "id": 5,
+      "name": "Ibrahim",
+      "email": "ibrahim@leadcallcrm.in",
+      "phone": "+91 98900 11223",
+      "role": "Sales Manager",
+      "status": "Active",
+      "areas": [
+        "All"
+      ],
+      "leadCap": 200,
+      "initials": "IB"
+    }
+  ],
+  "leads": [
+    {
+      "id": "LEAD-0007",
+      "name": "Rajesh Kumar",
+      "phone": "+91 98201 44521",
+      "email": "rajesh.k@gmail.com",
+      "priority": "HOT",
+      "status": "NEW",
+      "service": "Home Buying",
+      "bhkType": "3 BHK",
+      "location": "Andheri",
+      "source": "Google Ads",
+      "timeAgo": "38 minutes ago",
+      "callCount": 0,
+      "notes": "Interested in 3BHK flat purchase in Andheri West.",
+      "history": []
+    },
+    {
+      "id": "LEAD-0033",
+      "name": "Kiran Bhat",
+      "phone": "+91 98700 12345",
+      "email": "kiran.bhat@yahoo.com",
+      "priority": "HOT",
+      "status": "NEW",
+      "service": "Site Visit Booking",
+      "bhkType": "2 BHK",
+      "location": "Navi Mumbai",
+      "source": "Google Ads",
+      "timeAgo": "about 3 hours ago",
+      "callCount": 0,
+      "notes": "Looking for site visit for 2BHK flat.",
+      "history": []
+    }
+  ],
+  "call_logs": [],
+  "builder_projects": [
+    {
+      "id": 1,
+      "builder": "Lodha Group",
+      "projectName": "Lodha Woods",
+      "location": "Kandivali East",
+      "bhk": "3 BHK",
+      "carpetArea": "1,150 sq ft",
+      "launchPrice": "\u20b9 2.15 Cr",
+      "discountOffer": "5% Festive Off",
+      "bookingToken": "\u20b9 2.00 Lakh"
+    },
+    {
+      "id": 2,
+      "builder": "Godrej Properties",
+      "projectName": "Godrej Emerald",
+      "location": "Thane West",
+      "bhk": "2 BHK",
+      "carpetArea": "780 sq ft",
+      "launchPrice": "\u20b9 1.28 Cr",
+      "discountOffer": "Spot Discount \u20b9 3.5 Lakhs",
+      "bookingToken": "\u20b9 1.00 Lakh"
+    }
+  ]
+}

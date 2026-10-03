@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "creation": "2026-09-04 11:20:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "builder",
+  "location",
+  "price_range",
+  "column_break_1",
+  "rera_no",
+  "surveyor_name",
+  "survey_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "builder",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Builder / Developer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Land Parcel Location"
+  },
+  {
+   "fieldname": "price_range",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Expected Launch Price"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rera_no",
+   "fieldtype": "Data",
+   "label": "Expected / RERA Application No"
+  },
+  {
+   "fieldname": "surveyor_name",
+   "fieldtype": "Data",
+   "label": "Field Executive / Surveyor"
+  },
+  {
+   "fieldname": "survey_notes",
+   "fieldtype": "Small Text",
+   "label": "Survey Insights & Amenities"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-04 11:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Real State Crm",
+ "name": "Project Survey",
+ "naming_rule": "Expression",
+ "autoname": "format:SURV-.####",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

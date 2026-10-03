@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+set timeout 15
+set password "Frappe@Hrms!"
+spawn ssh -o StrictHostKeyChecking=no root@103.192.198.227
+expect {
+    "*password:*" {
+        send "$password\r"
+    }
+    timeout {
+        send_user "Connection timeout waiting for password prompt\n"
+        exit 1
+    }
+}
+expect {
+    "*#" {
+        send_user "Successfully connected as root!\n"
+    }
+    "*$" {
+        send_user "Successfully connected!\n"
+    }
+    timeout {
+        send_user "Failed to get shell prompt after sending password\n"
+        exit 1
+    }
+}
+interact

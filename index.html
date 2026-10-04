@@ -13,7 +13,10 @@
 <meta name="geo.region" content="IN-MH"/>
 <meta name="geo.placename" content="Mumbai"/>
 <meta name="geo.position" content="19.0760;72.8777"/>
-<meta name="ICBM" content="19.0760, 72.8777"/>
+<!-- Security, SSL & Privacy Headers -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <link rel="canonical" href="https://shyampandey1104.github.io/shyam-erpnext-portfolio-/"/>
 
 <!-- Open Graph / Facebook / LinkedIn -->
@@ -1143,8 +1146,17 @@ tailwind.config = {
           </div>
           <div><label class="font-bold text-sm">Timeline</label><select id="fTimeline" class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium bg-cream focus:outline-none"><option>Immediate (Within 1-2 weeks)</option><option>Within 1 Month</option><option>Exploring Options</option></select></div>
           <div><label class="font-bold text-sm">Tell me about your business workflow <span class="text-ink/40 font-normal text-xs">(Optional)</span></label><textarea id="fMsg" rows="4" placeholder="e.g. We have 3 branches / 50 workers and want to automate attendance and WhatsApp notifications (Optional)..." class="mt-1.5 w-full border-[2.5px] border-ink rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-4 focus:ring-[#06B6D4]/30 focus:border-[#06B6D4] transition bg-cream resize-none"></textarea></div>
+          
+          <!-- Anti-Spam Bot Honeypot (Invisible to humans) -->
+          <input type="text" id="fHoneypot" name="user_bot_catcher" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important;"/>
+
           <button type="submit" id="sendBtn" class="w-full btn-brutal grad-bg text-white font-sora font-extrabold text-lg py-4 rounded-2xl flex items-center justify-center gap-2"><span id="sendLabel">Send Request & Book Demo 🚀</span></button>
-          <p class="text-center text-xs text-ink/50 font-medium">🔒 100% Confidential. Directly delivered to Shyam's inbox & WhatsApp.</p>
+          
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-1 text-[11px] font-mono text-white/90">
+            <span class="bg-black/30 px-2 py-0.5 rounded border border-white/20">🔒 256-Bit SSL Encrypted</span>
+            <span class="bg-black/30 px-2 py-0.5 rounded border border-white/20">🛡️ DPDP Act 2023 Compliant</span>
+            <span class="bg-black/30 px-2 py-0.5 rounded border border-white/20">🚫 Zero Spam Policy</span>
+          </div>
         </form>
       </div>
     </div>
@@ -1176,16 +1188,24 @@ tailwind.config = {
       </div>
     </div>
     <div>
-      <div class="font-sora font-extrabold mb-3 text-[#A3E635]">LET'S CONNECT ⚡</div>
-      <div class="space-y-2 text-sm font-medium text-white/70">
-        <div class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">📞 +91 98677 78229</div>
-        <div onclick="openEmail()" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 hover:border-[#FF2E93] hover:text-white cursor-pointer transition flex items-center justify-between"><span>✉️ shyampandey1104@gmail.com</span><span class="text-xs bg-white/10 px-2 py-0.5 rounded">Compose ↗</span></div>
-        <div class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">📍 Mumbai, Maharashtra, India</div>
+      <div class="font-sora font-extrabold mb-3 text-[#A3E635]">SECURITY & COMPLIANCE 🔒</div>
+      <div class="space-y-2 text-xs font-medium text-white/70">
+        <div class="bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 flex items-center gap-2"><span class="text-green-400">●</span> <span>256-Bit SSL HTTPS Encrypted</span></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 flex items-center gap-2"><span class="text-blue-400">●</span> <span>India DPDP Act 2023 & GDPR Ready</span></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl px-3.5 py-2 flex items-center gap-2"><span class="text-yellow-400">●</span> <span>Zero-Data Selling & NDA Guaranteed</span></div>
       </div>
-      <button onclick="burstConfetti()" class="mt-4 w-full bg-white/10 border-2 border-dashed border-white/30 rounded-xl py-2.5 font-bold text-sm hover:bg-white hover:text-ink transition">🎊 Click for confetti!</button>
+      <button onclick="openPrivacyModal()" class="mt-3 text-xs text-white/60 hover:text-white underline font-mono flex items-center gap-1.5">
+        <i class="fa-solid fa-shield-halved text-[#FF2E93]"></i> View Privacy Policy & Terms
+      </button>
     </div>
   </div>
-  <div class="border-t border-white/10 py-5 text-center text-xs font-mono text-white/40 px-4">© 2026 Shyamkumar Bhupendra Pandey • Crafted with 💖 in Mumbai • Frappe • ERPNext • Python</div>
+  <div class="border-t border-white/10 py-5 text-center text-xs font-mono text-white/50 px-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+    <span>© 2026 Shyamkumar Bhupendra Pandey • Crafted with 💖 in Mumbai</span>
+    <span>•</span>
+    <button onclick="openPrivacyModal()" class="hover:text-white underline">Privacy Policy</button>
+    <span>•</span>
+    <a href="#about" class="hover:text-white">ERPNext & Frappe Specialist</a>
+  </div>
 </footer>
 
 <!-- FLOATING TO-TOP -->
@@ -1262,6 +1282,61 @@ tailwind.config = {
 <div id="projModal" class="fixed inset-0 z-[9500] hidden items-center justify-center p-4 modal-bg">
   <div class="bg-white border-[3px] border-ink rounded-[24px] shadow-brutalLg max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
     <div id="projModalContent"></div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY & COMPLIANCE MODAL -->
+<div id="privacyModal" class="fixed inset-0 z-[9580] hidden items-center justify-center p-4 modal-bg" onclick="if(event.target===this) closePrivacyModal()">
+  <div class="bg-white border-[3.5px] border-ink rounded-[28px] shadow-brutalLg max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 relative">
+    <button onclick="closePrivacyModal()" class="absolute top-4 right-4 w-9 h-9 bg-ink text-white rounded-full flex items-center justify-center hover:bg-[#FF2E93] transition"><i class="fa-solid fa-xmark text-lg"></i></button>
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 grad-bg text-white rounded-2xl flex items-center justify-center text-2xl border-2 border-ink shadow-brutalSm">🛡️</div>
+      <div>
+        <h3 class="font-sora font-extrabold text-2xl text-ink">Privacy Policy &amp; Security Terms</h3>
+        <p class="text-xs font-mono font-bold text-ink/60">Compliance: India DPDP Act 2023 &bull; GDPR Ready</p>
+      </div>
+    </div>
+    
+    <div class="mt-6 space-y-4 text-xs md:text-sm text-ink/80 leading-relaxed font-medium">
+      <div class="bg-cream border-2 border-ink rounded-xl p-4">
+        <h4 class="font-sora font-extrabold text-sm text-ink mb-1">1. Voluntary Data Collection</h4>
+        <p>We only collect contact details (Name, Phone/WhatsApp, Email, and Workflow Requirements) that you voluntarily submit through our demo request form or ShyamBot AI assistant.</p>
+      </div>
+      
+      <div class="bg-cream border-2 border-ink rounded-xl p-4">
+        <h4 class="font-sora font-extrabold text-sm text-ink mb-1">2. Strict Confidentiality &amp; Zero Selling</h4>
+        <p>Your business workflows, proprietary modules, and contact information are strictly confidential and protected by NDA terms. We <b>never sell, rent, or trade</b> your information to third-party marketing brokers.</p>
+      </div>
+
+      <div class="bg-cream border-2 border-ink rounded-xl p-4">
+        <h4 class="font-sora font-extrabold text-sm text-ink mb-1">3. PCI-DSS Compliance &amp; Payments</h4>
+        <p>All online transaction integrations (Razorpay, Stripe, PayU) use bank-grade PCI-DSS Level 1 compliance. We do not store credit/debit card numbers or CVV codes on our servers.</p>
+      </div>
+
+      <div class="bg-cream border-2 border-ink rounded-xl p-4">
+        <h4 class="font-sora font-extrabold text-sm text-ink mb-1">4. Right to Data Rectification &amp; Erasure</h4>
+        <p>In full compliance with the Digital Personal Data Protection (DPDP) Act 2023, you have the complete right to request deletion or export of your submitted information by emailing <a href="mailto:shyampandey1104@gmail.com" class="text-[#7C3AED] font-bold underline">shyampandey1104@gmail.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 pt-4 border-t-2 border-ink flex justify-end">
+      <button onclick="closePrivacyModal()" class="btn-brutal bg-ink text-white font-sora font-bold px-6 py-2.5 rounded-xl text-xs">Got it, Close &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING COOKIE & DPDP CONSENT BANNER -->
+<div id="cookieConsentBanner" class="fixed bottom-4 left-4 md:left-6 z-[8400] max-w-sm bg-white border-[3px] border-ink rounded-2xl shadow-brutal p-4 transition-all duration-300 transform translate-y-0">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl">🍪</div>
+    <div class="flex-1">
+      <div class="font-sora font-extrabold text-xs text-ink">Privacy &amp; Cookie Notice</div>
+      <p class="text-[11.5px] text-ink/75 font-medium mt-1 leading-tight">We use cookies for language selection &amp; anonymous traffic analytics in compliance with India's DPDP Act 2023.</p>
+      <div class="flex items-center gap-2 mt-3">
+        <button onclick="acceptCookies()" class="btn-brutal bg-[#A3E635] text-ink font-sora font-bold text-[11px] px-3.5 py-1.5 rounded-lg">Accept All 🔒</button>
+        <button onclick="openPrivacyModal()" class="btn-brutal bg-white text-ink font-sora font-bold text-[11px] px-3 py-1.5 rounded-lg">Learn More 📄</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1829,11 +1904,57 @@ function scrollToContactForm(){
   }
 }
 
+/* ============ SECURITY, HTTPS & PRIVACY COMPLIANCE ============ */
+if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+  location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+
+function openPrivacyModal() {
+  const m = document.getElementById('privacyModal');
+  if(m) {
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+  }
+}
+function closePrivacyModal() {
+  const m = document.getElementById('privacyModal');
+  if(m) {
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+  }
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  const banner = document.getElementById('cookieConsentBanner');
+  if(banner) {
+    banner.style.opacity = '0';
+    banner.style.transform = 'translateY(20px)';
+    setTimeout(() => banner.remove(), 400);
+  }
+  showToast('Preferences saved! 🍪');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('cookie_consent') === 'accepted') {
+    const banner = document.getElementById('cookieConsentBanner');
+    if(banner) banner.remove();
+  }
+});
+
 /* ============ CONTACT FORM (GOOGLE SHEETS + EMAIL + DIRECT BACKEND ALERT) ============ */
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCArZAXXe8aGWd3_52_2Dv-PmJaWo-9mc8pekLGYjVmU3t2DBEi9DMLVZINtmAkgMk/exec";
 
 document.getElementById('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
+  
+  // Anti-Spam Bot Protection
+  const honeypot = document.getElementById('fHoneypot') ? document.getElementById('fHoneypot').value : '';
+  if (honeypot) {
+    console.warn('Bot submission blocked.');
+    return;
+  }
+
   const n = document.getElementById('fName').value.trim();
   const p = document.getElementById('fPhone').value.trim();
   const em = document.getElementById('fEmail').value.trim();

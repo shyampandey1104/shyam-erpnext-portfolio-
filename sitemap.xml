@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shyampandey1104.github.io/shyam-erpnext-portfolio-/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Image Indexing for Google Images -->
+    <image:image>
+      <image:loc>https://shyampandey1104.github.io/shyam-erpnext-portfolio-/profile.jpg</image:loc>
+      <image:title>Shyamkumar Bhupendra Pandey — Senior ERPNext Developer &amp; Team Lead</image:title>
+      <image:caption>Senior ERPNext Developer and Frappe Specialist in Mumbai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shyampandey1104.github.io/shyam-erpnext-portfolio-/School_ERP_LinkedIn_Showcase.jpg</image:loc>
+      <image:title>School and Educational Institute Management SaaS ERP</image:title>
+      <image:caption>Multi-branch ERPNext solution with Biometrics, RFID and WhatsApp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shyampandey1104.github.io/shyam-erpnext-portfolio-/solar_epc_erp.jpg</image:loc>
+      <image:title>Solar EPC Infrastructure ERP on ERPNext</image:title>
+      <image:caption>Site work orders, milestone billing and BOM variance tracking</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shyampandey1104.github.io/shyam-erpnext-portfolio-/ieee_paper.png</image:loc>
+      <image:title>IEEE Published Research Paper in Wireless Sensor Networks &amp; IoT</image:title>
+      <image:caption>IEEE published research authored by Shyamkumar Pandey</image:caption>
+    </image:image>
+  </url>
+</urlset>

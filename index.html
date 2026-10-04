@@ -507,7 +507,7 @@ tailwind.config = {
         <a href="https://linkedin.com/in/shyamkumarpandey" target="_blank" class="magnetic btn-brutal bg-[#0A66C2] text-white font-bold px-5 py-3.5 rounded-2xl inline-flex items-center gap-2" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-xl"></i></a>
       </div>
 
-      <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 max-w-2xl">
+      <div class="reveal grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 mt-8 max-w-3xl">
         <div class="card-brutal rounded-2xl p-4 text-center rotate-[-1deg] bg-[#FFF1F7]">
           <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="15">0</span>+</div>
           <div class="text-xs font-bold mt-1 uppercase tracking-wide">ERP/CRM Deployed</div>
@@ -523,6 +523,10 @@ tailwind.config = {
         <div class="card-brutal rounded-2xl p-4 text-center rotate-[1deg] bg-[#EFFFEF]">
           <div class="font-sora font-extrabold text-3xl grad-text"><span class="counter" data-count="40">0</span>%</div>
           <div class="text-xs font-bold mt-1 uppercase tracking-wide">Faster Workflows</div>
+        </div>
+        <div class="card-brutal rounded-2xl p-4 text-center rotate-[-1deg] bg-[#FFF5EB] col-span-2 sm:col-span-4 lg:col-span-1 border-2 border-ink">
+          <div class="font-sora font-extrabold text-2xl grad-text">24/7</div>
+          <div class="text-xs font-bold mt-1 uppercase tracking-wide text-ink">Priority Support</div>
         </div>
       </div>
     </div>
@@ -671,6 +675,16 @@ tailwind.config = {
             <div>
               <div class="font-sora font-extrabold text-sm text-ink">Rapid Sprints & Migration</div>
               <div class="text-xs text-ink/65 font-medium mt-0.5">Fast 2-4 week delivery, seamless Excel legacy data migration, and zero business downtime.</div>
+            </div>
+          </div>
+          <div class="sm:col-span-2 bg-[#FFF8EC] border-[2.5px] border-ink rounded-2xl p-4 shadow-brutalSm flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#16a34a] text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-headset"></i></div>
+            <div class="flex-1">
+              <div class="font-sora font-extrabold text-sm text-ink flex items-center gap-2">
+                <span>24/7 Priority Emergency Support &amp; SLA</span>
+                <span class="bg-[#A3E635] text-ink text-[10px] font-mono font-bold px-2 py-0.5 rounded border border-ink">DIRECT HOTLINE</span>
+              </div>
+              <div class="text-xs text-ink/75 font-medium mt-0.5">Dedicated WhatsApp &amp; phone hotline for critical production bugs, automated server health monitors, daily off-site backups &amp; sub-15 min emergency SLA.</div>
             </div>
           </div>
         </div>
@@ -2121,6 +2135,9 @@ function botReply(q){
   }
   if(/biometric|rfid|hardware|device|zkteco|essl|exotel|whatsapp/.test(q)) {
     return `🏷️ <b>Hardware & API Integrations:</b><br>• Biometric & RFID device auto-sync daemons<br>• Official WhatsApp Cloud API triggers<br>• Exotel telephony click-to-call & recording<br>• Govt Aadhaar / PAN / Voter ID verification`;
+  }
+  if(/support|maintenance|sla|emergency|24\/7|uptime|bug|fix|24x7/.test(q)) {
+    return `🛡️ <b>24/7 Priority Emergency Support & SLA:</b><br>• <b>Direct Hotline:</b> Instant developer escalation for critical production issues<br>• <b>Sub-15 Min SLA:</b> Rapid response for manufacturing, school & sales downtimes<br>• <b>Continuous Monitoring:</b> Automated server health checks + daily cloud backups<br>• Reach Shyam 24/7 at <a href="https://wa.me/919867778229" target="_blank" class="underline font-bold text-[#25D366]">+91 98677 78229</a>!`;
   }
   if(/demo|book|pricing|cost|quote|hire|price|schedule/.test(q)) {
     return `
